@@ -1,26 +1,53 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  /* Warna dasar */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #475468;
+
+  /* Map nama font dari Google Fonts ke CSS variable */
+  --font-noto-sans: "Noto Sans";
+  --font-lora: "Lora";
 }
 
+/* Tailwind v4 tokens */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Keluarga font untuk util Tailwind */
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  --font-serif: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+
+  /* (Opsional) mono */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Utilitas opsional (kalau ingin class eksplisit) */
+.font-noto {
+  font-family: var(--font-sans);
+}
+.font-lora {
+  font-family: var(--font-serif);
 }
 
+/* Base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+/* (Opsional) Heading default pakai Lora — hapus jika tidak perlu
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+}
+*/
