@@ -107,8 +107,6 @@ export default function PromoCarousel() {
             ))}
           </div>
         </div>
-
-        {/* Dots */}
         <div className="mt-6 flex justify-center gap-2">
           {PROMOS.map((_, i) => (
             <button

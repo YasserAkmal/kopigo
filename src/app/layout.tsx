@@ -21,8 +21,17 @@ const noto = Noto_Sans({
 export const metadata: Metadata = {
   title: "Kopigo",
   description: "Kopigo site",
+  themeColor: "#0c4a6e", 
+  icons: {
+    icon: [
+      { url: "/LOGO-KOPIGO.svg" },
+      { url: "/LOGO-KOPIGO.svg", sizes: "32x32", type: "image/svg" },
+      { url: "/LOGO-KOPIGO.svg", sizes: "16x16", type: "image/svg" },
+    ],
+    apple: [{ url: "/LOGO-KOPIGO.svg", sizes: "180x180" }],
+    shortcut: ["/LOGO-KOPIGO.svg"],
+  },
 };
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`h-full ${noto.variable} ${lora.variable}`}>
