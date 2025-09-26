@@ -41,13 +41,13 @@ export default function Navbar() {
             <span className="inline-flex h-9 w-9 items-center justify-center">
               <Image
                 src="/LOGO-KOPIGO.svg"
-                alt="Kopigo"
+                alt="KOPIGO"
                 width={36}
                 height={36}
                 className=""
               />
             </span>
-            <span className="font-sans truncate text-base font-semibold tracking-tight">
+            <span className="font-sans text-white text-base font-semibold tracking-tight">
               KOPIGO
             </span>
           </Link>
