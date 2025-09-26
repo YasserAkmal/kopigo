@@ -36,7 +36,7 @@ export default function HeroSubscription() {
             </p>
 
             <div className="mt-8">
-              <Link href="/">
+              <Link href="/aboutus">
                 <button className="px-6 py-3 bg-sky-950 text-white font-semibold hover:bg-sky-800 transition">
                   Selengkapnya
                 </button>

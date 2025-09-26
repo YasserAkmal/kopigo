@@ -7,26 +7,29 @@ import InstagramPost from "./components/InstagramPost";
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col">
-      {/* Background pakai next/image (gambar di /public/mountains.jpg) */}
-      <div
-        className="
-    relative w-full 
-    h-[20vh] sm:h-[35vh] lg:h-[60vh] 
-    flex flex-col items-center justify-center
-    px-4 sm:px-6 lg:px-8
-    bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat
-  "
-      >
-        {/* Konten */}
-        <div className="relative z-10 container mt-auto mb-5">
-          <h1 className="font-serif text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-50 drop-shadow">
-            KOPIGO
+      <section className="relative">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/bg.jpg" // ganti sesuai asetmu di /public
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
+            Kopigo
           </h1>
-          <p className="mt-2 font-sans text-left text-xl sm:text-2xl lg:text-3xl font-normal text-zinc-50/95">
-            Where the joys of coffee meet the comforts of home.
+          <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
+            Where great coffee meets cozy vibes—a hangout spot for young people
+            to chat, create, and express yourself.
           </p>
         </div>
-      </div>
+      </section>
       <div className="">
         <HeroSubscription />
       </div>

@@ -11,10 +11,10 @@ function cx(...classes: Array<string | false | null | undefined>) {
 
 const NAV_ITEMS = [
   { label: "DASHBOARD", href: "/" },
-  { label: "ABOUT US", href: "/about" },
+  { label: "ABOUT US", href: "/aboutus" },
   { label: "MENU", href: "/menu" },
-  { label: "STORE", href: "/store" },
-  { label: "CONTACT US", href: "/contact" },
+  { label: "STORE", href: "/storebranches" },
+  { label: "CONTACT US", href: "/contactus" },
 ] as const;
 
 export default function Navbar() {
