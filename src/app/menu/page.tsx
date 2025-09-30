@@ -1,47 +1,54 @@
+// app/menu/page.tsx
 import Link from "next/link";
 import MenuCard from "@/app/components/MenuCard";
 import menuData from "@/app/data/menu.json";
-import  Image from "next/image";
 
 export const metadata = {
   title: "Menu — Kopigo",
   description: "Daftar menu Kopigo.",
 };
 
-type SearchParams = {
-  category?: string;
-};
+type SP = Record<string, string | string[] | undefined>;
 
 function slugify(s: string) {
   return s
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9\s-]/g, "") 
+    .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
 }
 
-export default function MenuPage({
+export default async function MenuPage({
   searchParams,
 }: {
-  searchParams?: SearchParams;
+  // Next 15: Promise
+  searchParams?: Promise<SP>;
 }) {
+  const sp = (await searchParams) ?? {};
   const categories = menuData.categories ?? [];
+
   const allTabs = [
     { name: "All" as const },
     ...categories.map((c: any) => ({ name: c.name as string })),
   ];
 
-  const selectedSlug = searchParams?.category?.toLowerCase() ?? "all";
+  const selectedSlugRaw =
+    typeof sp.category === "string"
+      ? sp.category
+      : Array.isArray(sp.category)
+      ? sp.category[0]
+      : "all";
+
+  const selectedSlug = (selectedSlugRaw ?? "all").toLowerCase();
   const selectedName =
     selectedSlug === "all"
       ? "All"
       : categories.find((c: any) => slugify(c.name) === selectedSlug)?.name ??
         "All";
 
-  // Filter data sesuai kategori
   const visibleCategories =
     selectedName === "All"
       ? categories
@@ -49,34 +56,14 @@ export default function MenuPage({
 
   return (
     <main>
-       <section className="relative">
-              <div className="absolute inset-0 -z-10">
-                <Image
-                  src="/bg.jpg" // ganti sesuai asetmu di /public
-                  alt=""
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/40" />
-              </div>
-      
-              <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
-                  KOPIGO
-                </h1>
-                <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
-                  Where great coffee meets cozy vibes—a hangout spot for young people
-                  to chat, create, and express yourself.
-                </p>
-              </div>
-            </section>
       <section className="bg-white">
         <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <h1 className="font-serif text-2xl sm:text-3xl text-sky-950">
+            Menu Kopigo
+          </h1>
 
           {/* Tabs kategori */}
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {allTabs.map((tab) => {
               const slug = slugify(tab.name);
               const isActive =
@@ -87,10 +74,10 @@ export default function MenuPage({
                   key={tab.name}
                   href={slug === "all" ? "/menu" : `/menu?category=${slug}`}
                   className={[
-                    "px-4 py-2 rounded-full text-sm  transition",
+                    "px-4 py-2 rounded-full text-sm border transition",
                     isActive
-                      ? "bg-sky-950 text-white"
-                      : "bg-white text-sky-900 border-sky-950 hover:bg-sky-50 hover:text-sky-950",
+                      ? "bg-sky-600 text-white border-sky-600"
+                      : "bg-white text-sky-900 border-sky-200",
                   ].join(" ")}
                 >
                   {tab.name}
@@ -99,11 +86,9 @@ export default function MenuPage({
             })}
           </div>
 
-          {/* Daftar kategori (terfilter) */}
+          {/* Grid menu (terfilter) */}
           {visibleCategories.map((cat: any) => (
             <div key={cat.name} className="mt-8">
-              {/* Sembunyikan judul kategori kalau mode All menampilkan banyak kategori; 
-                  kalau filter satu kategori, tetap tampilkan judulnya */}
               {(selectedName === "All" || visibleCategories.length > 1) && (
                 <h2 className="font-serif text-lg sm:text-xl text-sky-950 mb-4">
                   {cat.name}
@@ -129,7 +114,6 @@ export default function MenuPage({
             </div>
           ))}
 
-          {/* Jika kategori tidak ditemukan */}
           {visibleCategories.length === 0 && (
             <div className="mt-10 text-sky-700">
               Kategori tidak ditemukan. Coba pilih kategori lain.
