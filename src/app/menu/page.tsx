@@ -2,13 +2,19 @@
 import Link from "next/link";
 import MenuCard from "@/app/components/MenuCard";
 import menuData from "@/app/data/menu.json";
-
-export const metadata = {
-  title: "Menu — Kopigo",
-  description: "Daftar menu Kopigo.",
-};
+import Image from "next/image";
 
 type SP = Record<string, string | string[] | undefined>;
+type MenuItem = {
+  id: string;
+  title: string;
+  desc: string;
+  price: number;
+  badge?: string;
+  publicId?: string;
+};
+type MenuCategory = { name: string; items: MenuItem[] };
+type MenuData = { categories: MenuCategory[] };
 
 function slugify(s: string) {
   return s
@@ -24,17 +30,18 @@ function slugify(s: string) {
 export default async function MenuPage({
   searchParams,
 }: {
-  // Next 15: Promise
   searchParams?: Promise<SP>;
 }) {
   const sp = (await searchParams) ?? {};
-  const categories = menuData.categories ?? [];
+  const data = (menuData as MenuData) ?? { categories: [] };
+  const categories = data.categories ?? [];
 
   const allTabs = [
     { name: "All" as const },
-    ...categories.map((c: any) => ({ name: c.name as string })),
+    ...categories.map((c) => ({ name: c.name })),
   ];
 
+  // Ambil nilai query ?category=...
   const selectedSlugRaw =
     typeof sp.category === "string"
       ? sp.category
@@ -46,38 +53,58 @@ export default async function MenuPage({
   const selectedName =
     selectedSlug === "all"
       ? "All"
-      : categories.find((c: any) => slugify(c.name) === selectedSlug)?.name ??
-        "All";
+      : categories.find((c) => slugify(c.name) === selectedSlug)?.name ?? "All";
 
   const visibleCategories =
     selectedName === "All"
       ? categories
-      : categories.filter((c: any) => c.name === selectedName);
+      : categories.filter((c) => c.name === selectedName);
 
   return (
     <main>
+      <section className="relative">
+              <div className="absolute inset-0 -z-10">
+                <Image
+                  src="/bg.jpg" // ganti sesuai asetmu di /public
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/40" />
+              </div>
+      
+              <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
+                  Menu Kopigo
+                </h1>
+                <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
+                  Enjoy a variety of coffee and specialty drinks at Kopigo—a vibrant spot to hang out, create, and express yourself.
+                </p>
+              </div>
+            </section>
       <section className="bg-white">
         <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <h1 className="font-serif text-2xl sm:text-3xl text-sky-950">
-            Menu Kopigo
-          </h1>
 
           {/* Tabs kategori */}
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className=" flex flex-wrap gap-2">
             {allTabs.map((tab) => {
               const slug = slugify(tab.name);
               const isActive =
                 (selectedSlug === "all" && tab.name === "All") ||
                 slug === selectedSlug;
+              const href = slug === "all" ? "/menu" : `/menu?category=${slug}`;
               return (
                 <Link
                   key={tab.name}
-                  href={slug === "all" ? "/menu" : `/menu?category=${slug}`}
+                  href={href}
+                  aria-current={isActive ? "page" : undefined}
                   className={[
-                    "px-4 py-2 rounded-full text-sm border transition",
+                    "px-4 py-2 text-sm transition",
                     isActive
-                      ? "bg-sky-600 text-white border-sky-600"
-                      : "bg-white text-sky-900 border-sky-200",
+                      ? "bg-sky-950 text-white border-sky-950"
+                      : "bg-white text-sky-950  hover:border-bottom-sky-950",
                   ].join(" ")}
                 >
                   {tab.name}
@@ -87,7 +114,7 @@ export default async function MenuPage({
           </div>
 
           {/* Grid menu (terfilter) */}
-          {visibleCategories.map((cat: any) => (
+          {visibleCategories.map((cat) => (
             <div key={cat.name} className="mt-8">
               {(selectedName === "All" || visibleCategories.length > 1) && (
                 <h2 className="font-serif text-lg sm:text-xl text-sky-950 mb-4">
@@ -95,10 +122,10 @@ export default async function MenuPage({
                 </h2>
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cat.items?.map((it: any) => (
+                {cat.items?.map((it) => (
                   <MenuCard
                     key={it.id}
-                    publicId={it.publicId}
+                    publicId={it.publicId ?? ""}
                     title={it.title}
                     desc={it.desc}
                     price={it.price}

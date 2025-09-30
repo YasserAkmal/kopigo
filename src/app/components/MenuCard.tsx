@@ -45,12 +45,6 @@ export default function MenuCard({
 
         <div className="mt-4 flex items-center justify-between">
           <p className="text-sky-950 font-semibold">{formatIDR(price)}</p>
-          <button
-            className="inline-flex items-center justify-center bg-sky-950 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-900 transition"
-            type="button"
-          >
-            More
-          </button>
         </div>
       </div>
     </article>

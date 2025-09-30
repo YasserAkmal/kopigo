@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+// app/layout.tsx
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Lora, Noto_Sans } from "next/font/google";
 import { ReactNode } from "react";
@@ -21,17 +22,30 @@ const noto = Noto_Sans({
 export const metadata: Metadata = {
   title: "Kopigo",
   description: "Kopigo site",
-  themeColor: "#0c4a6e", 
+  // ❌ themeColor dipindah ke export viewport (di bawah)
   icons: {
     icon: [
       { url: "/LOGO-KOPIGO.svg" },
-      { url: "/LOGO-KOPIGO.svg", sizes: "32x32", type: "image/svg" },
-      { url: "/LOGO-KOPIGO.svg", sizes: "16x16", type: "image/svg" },
+      { url: "/LOGO-KOPIGO.svg", sizes: "32x32", type: "image/svg+xml" },
+      { url: "/LOGO-KOPIGO.svg", sizes: "16x16", type: "image/svg+xml" },
     ],
     apple: [{ url: "/LOGO-KOPIGO.svg", sizes: "180x180" }],
     shortcut: ["/LOGO-KOPIGO.svg"],
   },
 };
+
+// ✅ Next 15: themeColor diletakkan di viewport
+export const viewport: Viewport = {
+  // satu warna:
+  // themeColor: "#0c4a6e",
+
+  // atau mode light/dark:
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0c4a6e" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+  ],
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`h-full ${noto.variable} ${lora.variable}`}>

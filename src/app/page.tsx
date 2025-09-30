@@ -22,7 +22,7 @@ export default function Home() {
 
         <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
-            KOPIGO
+            Kopigo
           </h1>
           <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
             Where great coffee meets cozy vibes—a hangout spot for young people
