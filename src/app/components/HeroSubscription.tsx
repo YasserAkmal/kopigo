@@ -11,7 +11,7 @@ export default function HeroSubscription() {
           <div className="relative w-full">
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
-                src="/dummy-img.jpg" 
+                src="/dummy-img.jpg"
                 alt="Coffee subscription products"
                 fill
                 priority
@@ -26,19 +26,27 @@ export default function HeroSubscription() {
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-sky-950">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
-              faucibus ex sapien vitae pellentesque sem placerat. In id cursus
-              mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
-              urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
-              egestas. Iaculis massa nisl malesuada lacinia integer nunc
-              posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad
-              litora torquent per conubia nostra inceptos himenaeos.
+              KOPIGO was born in 2018 in West Sumatra with a simple dream: to
+              make coffee not just a drink, but a moment of comfort and
+              connection. From that first humble outlet, our journey has poured
+              into people’s lives in ways we never imagined. By 2025, we had
+              proudly served over one million cups of coffee and non-coffee
+              beverages — each cup not just consumed, but lived, becoming part
+              of someone’s day, someone’s story, someone’s memory. This
+              milestone is not just a number. It is a testament to the trust of
+              our community, the resilience of our team, and the spirit that
+              turned a local coffee corner into a household name across West
+              Sumatra. But our story does not end here. KOPIGO is ready for its
+              next chapter: to transform from a regional champion into a
+              national icon with regional aspirations, carrying the spirit of a
+              million cups into tens of millions more — across Indonesia,
+              and one day, Asia
             </p>
 
             <div className="mt-8">
               <Link href="/aboutus">
                 <button className="px-6 py-3 bg-sky-950 text-white font-semibold hover:bg-sky-800 transition">
-                  Selengkapnya
+                  More About Us
                 </button>
               </Link>
             </div>

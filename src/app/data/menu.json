@@ -1,0 +1,237 @@
+{
+  "categories": [
+    {
+      "name": "MANUAL BREW",
+      "items": [
+        {
+          "id": "vietnam-drip-ice",
+          "title": "VIETNAM DRIP ICE",
+          "desc": "Clean and focused, crisp with a soft finish with gentle bitterness; perfect for sunny days.",
+          "price": 30000,
+          "publicId": "VIETNAM_DRIP_ICED_eezkk1"
+        },
+        {
+          "id": "vietnam-drip-hot",
+          "title": "VIETNAM DRIP HOT",
+          "desc": "Bright and easy-going, gentle bitterness meeting a light yet satisfying body. Best enjoyed chilled.",
+          "price": 32000,
+          "publicId": "VIETNAM_DRIP_HOT_aovvn2"
+        },
+        {
+          "id": "v60-black-coffee",
+          "title": "V60 BLACK COFFEE",
+          "desc": "A bold and straightforward cup with clean finish and subtle sweetness, perfect for sunny days.",
+          "price": 58000,
+          "publicId": "V60_BLACK_COFFEE_gxwgz3"
+        }
+      ]
+    },
+    {
+      "name": "NON COFFEE",
+      "items": [
+        {
+          "id": "taro-latte-ice",
+          "title": "TARO LATTE ICE",
+          "desc": "Bright and easy-going, smooth aftertaste meeting a light yet satisfying body. Great both hot or iced.",
+          "price": 39000,
+          "publicId": "TARO_LATTE_oprmyu"
+        },
+        {
+          "id": "redvelvet",
+          "title": "REDVELVET",
+          "desc": "Rich yet balanced—light floral hints, smooth aftertaste, and a bright and refreshing feel, best enjoyed chilled.",
+          "price": 39000,
+          "publicId": "REDVELVET_gq7hsn"
+        },
+        {
+          "id": "iced-vanilla-latte",
+          "title": "ICED VANILLA LATTE",
+          "desc": "Comfort in a glass—aromatic and clean, with light floral hints. Comforting when warm.",
+          "price": 49000,
+          "publicId": "ICE_VANILLA_LATTE_vpqjjc"
+        },
+        {
+          "id": "greentea",
+          "title": "GREENTEA",
+          "desc": "A layered and cozy cup with gentle bitterness and balanced acidity, served over ice.",
+          "price": 49000,
+          "publicId": "GREENTEA_jkuszh"
+        },
+        {
+          "id": "choco-oreo",
+          "title": "CHOCO OREO",
+          "desc": "A bright and refreshing cup with light floral hints and lingering warmth, ideal for quiet mornings.",
+          "price": 42000,
+          "publicId": "CHOCO_OREO_srocot"
+        },
+        {
+          "id": "choco-mint",
+          "title": "CHOCO MINT",
+          "desc": "Rich yet balanced—light floral hints, roasted depth, and a crisp with a soft finish feel, refreshing on ice.",
+          "price": 49000,
+          "publicId": "CHOCO_MINT_suou8w"
+        },
+        {
+          "id": "black-charcoal",
+          "title": "BLACK CHARCOAL",
+          "desc": "A silky-smooth cup with gentle bitterness and subtle sweetness, perfect for sunny days.",
+          "price": 39000,
+          "publicId": "BLACK_CHARCOAL_azebkd"
+        }
+      ]
+    },
+    {
+      "name": "REFRESHMENT",
+      "items": [
+        {
+          "id": "soda-based",
+          "title": "SODA BASED",
+          "desc": "Rich yet balanced—gentle bitterness, clean finish, and a creamy and balanced feel, made for a slow afternoon.",
+          "price": 36000,
+          "publicId": "SODA_BASED_mawdtn"
+        },
+        {
+          "id": "iced-lychee-latte",
+          "title": "ICED LYCHEE LATTE",
+          "desc": "Comfort in a glass—creamy and balanced, with round body. Best enjoyed chilled.",
+          "price": 36000,
+          "publicId": "ICED_LYCHEE_LATTE_d6dlmy"
+        }
+      ]
+    },
+    {
+      "name": "SIGNATURE",
+      "items": [
+        {
+          "id": "signature-kopigo-1l",
+          "title": "SIGNATURE KOPIGO 1L",
+          "desc": "Comfort in a glass—rich, with a gentle finish, with clean finish. Perfect for sunny days.",
+          "price": 174000,
+          "badge": "FAV🤍",
+          "publicId": "SIGNATURE_KOPIGO_1L_rvrttj"
+        },
+        {
+          "id": "signature-chocolate-ice",
+          "title": "SIGNATURE CHOCOLATE ICE",
+          "desc": "Rich yet balanced—gentle bitterness, round body, and a silky-smooth feel, made for a slow afternoon.",
+          "price": 39000,
+          "badge": "FAV🤍",
+          "publicId": "SIGNATURE_CHOCOLATTE_xoqadt"
+        },
+        {
+          "id": "iced-kopigo-signature",
+          "title": "ICED KOPIGO SIGNATURE",
+          "desc": "Comfort in a glass—crisp with a soft finish, with light floral hints. Great both hot or iced.",
+          "price": 33000,
+          "badge": "FAV🤍",
+          "publicId": "ICE_KOPIGO_SIGNATURE_sjqpdl"
+        },
+        {
+          "id": "hot-kopigo-signature",
+          "title": "HOT KOPIGO SIGNATURE",
+          "desc": "Clean and focused, bold and straightforward with balanced acidity; served over ice.",
+          "price": 33000,
+          "publicId": "HOT_KOPIGO_SIGNATURE_z8ppw4"
+        }
+      ]
+    },
+    {
+      "name": "COFFEE",
+      "items": [
+        {
+          "id": "piccolo",
+          "title": "PICCOLO",
+          "desc": "A rich, with a gentle finish cup with roasted depth and balanced acidity, ideal for quiet mornings.",
+          "price": 42000,
+          "publicId": "PICCOLO_zh7rmx"
+        },
+        {
+          "id": "iced-hazelnut-latte",
+          "title": "ICED HAZELNUT LATTE",
+          "desc": "Clean and focused, light yet satisfying with roasted depth; best enjoyed chilled.",
+          "price": 49000,
+          "publicId": "ICE_HAZELNUT_LATTE_hf98hn"
+        },
+        {
+          "id": "ice-caramel-machiatto",
+          "title": "ICE CARAMEL MACHIATTO",
+          "desc": "A bold and straightforward cup with roasted depth and light floral hints, served over ice.",
+          "price": 49000,
+          "publicId": "ICE_CARAMEL_MACHIATTO_ihgtql"
+        },
+        {
+          "id": "ice-americano",
+          "title": "ICE AMERICANO",
+          "desc": "Bright and easy-going, clean finish meeting a light yet satisfying body. Comforting when warm.",
+          "price": 33000,
+          "badge": "BEST SELLER",
+          "publicId": "ICE_AMERICANO_zjvj3d"
+        },
+        {
+          "id": "hot-hazelnut-latte",
+          "title": "HOT HAZELNUT LATTE",
+          "desc": "Bright and easy-going, light floral hints meeting a crisp with a soft finish body. Served over ice.",
+          "price": 45000,
+          "publicId": "HOT_HAZELNUT_LATTE_ikki9f"
+        },
+        {
+          "id": "hot-cappucino",
+          "title": "HOT CAPPUCINO",
+          "desc": "A crisp with a soft finish cup with balanced acidity and toasty undertones, great both hot or iced.",
+          "price": 42000,
+          "publicId": "HOT_CAPPUCINO_emlqjl"
+        },
+        {
+          "id": "hot-cafe-latte",
+          "title": "HOT CAFE LATTE",
+          "desc": "Clean and focused, light yet satisfying with gentle bitterness; served over ice.",
+          "price": 42000,
+          "publicId": "HOT_CAFE_LATTE_em8bou"
+        },
+        {
+          "id": "hot-americano",
+          "title": "HOT AMERICANO",
+          "desc": "Bright and easy-going, light floral hints meeting a crisp with a soft finish body. Perfect for sunny days.",
+          "price": 30000,
+          "badge": "BEST SELLER",
+          "publicId": "HOT_AMERICANO_uc1a2p"
+        },
+        {
+          "id": "espresso",
+          "title": "ESPRESSO",
+          "desc": "Rich yet balanced—lingering warmth, clean finish, and a bold and straightforward feel, best enjoyed chilled.",
+          "price": 30000,
+          "publicId": "ESPRESSO_f4cnnu"
+        },
+        {
+          "id": "hot-caramel-machiatto",
+          "title": "HOT CARAMEL MACHIATTO",
+          "desc": "A layered and cozy cup with gentle bitterness and subtle sweetness, great both hot or iced.",
+          "price": 45000,
+          "publicId": "CARAMEL_MACHIATTO_k9iqqv"
+        },
+        {
+          "id": "biscotti-regali",
+          "title": "BISCOTTI REGALI",
+          "desc": "Rich yet balanced—smooth aftertaste, light floral hints, and a aromatic and clean feel, refreshing on ice.",
+          "price": 42000,
+          "publicId": "BISCOTTI_REGALI_qtut1m"
+        },
+        {
+          "id": "hot-mocca-latte",
+          "title": "HOT MOCCA LATTE",
+          "desc": "Clean and focused, light yet satisfying with gentle bitterness; best enjoyed chilled.",
+          "price": 51000,
+          "publicId": "HOT_MOCCA_LATTE_ubxojx"
+        },
+        {
+          "id": "hot-vanilla-latte",
+          "title": "HOT VANILLA LATTE",
+          "desc": "A layered and cozy cup with extra creamy mouthfeel and gentle bitterness, great both hot or iced.",
+          "price": 45000,
+          "publicId": "HOT_VANILLA_LATTE_avyj3l"
+        }
+      ]
+    }
+  ]
+}
