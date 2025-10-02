@@ -43,9 +43,9 @@ export default function MenuCard({
         </h3>
         {desc && <p className="mt-1 text-sm text-zinc-700">{desc}</p>}
 
-        <div className="mt-4 flex items-center justify-between">
+        {/* <div className="mt-4 flex items-center justify-between">
           <p className="text-sky-950 font-semibold">{formatIDR(price)}</p>
-        </div>
+        </div> */}
       </div>
     </article>
   );
