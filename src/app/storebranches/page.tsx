@@ -7,14 +7,10 @@ type SP = Record<string, string | string[] | undefined>;
 export default async function StoreBranches({
   searchParams,
 }: {
-  searchParams?: Promise<SP> | SP;
+  searchParams?: SP;
 }) {
-  const sp: SP | undefined =
-    typeof (searchParams as any)?.then === "function"
-      ? await (searchParams as Promise<SP>)
-      : (searchParams as SP | undefined);
-
-  const branchParam = typeof sp?.branch === "string" ? sp.branch : null;
+  const branchParam =
+    typeof searchParams?.branch === "string" ? searchParams.branch : null;
   const branch = findBranch(branchParam) || findBranch("tebet");
 
   if (!branch) {
@@ -43,13 +39,11 @@ export default async function StoreBranches({
             <p className="text-xs text-gray-400 mt-1">{branch.note}</p>
           )}
         </div>
-       
       </header>
-
 
       {embed && (
         <section className="mb-8">
-          <div className="aspect-video w-full  h-screen overflow-hidden">
+          <div className="aspect-video w-full h-screen overflow-hidden">
             <iframe
               title={`Peta ${branch.name}`}
               src={embed}
@@ -59,11 +53,8 @@ export default async function StoreBranches({
               allowFullScreen
             />
           </div>
-         
         </section>
       )}
-
-      
     </main>
   );
 }
