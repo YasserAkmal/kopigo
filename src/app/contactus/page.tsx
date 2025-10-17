@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 type Status = {
   type: "idle" | "loading" | "success" | "error";
@@ -9,25 +9,31 @@ type Status = {
 
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>({ type: "idle" });
+  const pendingRef = useRef(false);
+
+  const isLoading = status.type === "loading";
+
+  // helper kecil
+  const safeTrim = (v: FormDataEntryValue | null) =>
+    (typeof v === "string" ? v : "").trim();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    if (pendingRef.current) return; // anti double submit
 
-    // honeypot: jika terisi, anggap bot
-    if ((fd.get("company") as string)?.trim()) {
+    const fd = new FormData(e.currentTarget);
+    // honeypot (bot akan mengisi ini)
+    if (safeTrim(fd.get("company"))) {
       setStatus({ type: "success", message: "Terima kasih! (honeypot)" });
       e.currentTarget.reset();
       return;
     }
 
-    setStatus({ type: "loading" });
-
     const payload = {
-      name: ((fd.get("name") as string) || "").trim(),
-      email: ((fd.get("email") as string) || "").trim(),
-      subject: ((fd.get("subject") as string) || "").trim(),
-      message: ((fd.get("message") as string) || "").trim(),
+      name: safeTrim(fd.get("name")),
+      email: safeTrim(fd.get("email")),
+      subject: safeTrim(fd.get("subject")) || "Pesan dari Form Kontak",
+      message: safeTrim(fd.get("message")),
     };
 
     // front-end guard
@@ -39,23 +45,42 @@ export default function ContactPage() {
       return;
     }
 
+    setStatus({ type: "loading" });
+    pendingRef.current = true;
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      // Cegah parse HTML error page sebagai JSON
+      const ct = res.headers.get("content-type") || "";
+      if (!ct.includes("application/json")) {
+        const text = await res.text();
+        throw new Error(
+          `Server mengembalikan ${res.status}. ${text.slice(0, 140)}…`
+        );
+      }
+
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || "Gagal mengirim pesan.");
+
       setStatus({ type: "success", message: "Pesan terkirim. Terima kasih!" });
-      (e.target as HTMLFormElement).reset();
+      e.currentTarget.reset();
     } catch (err: any) {
       setStatus({
         type: "error",
-        message: err.message || "Terjadi kesalahan.",
+        message: err?.message || "Terjadi kesalahan.",
       });
+    } finally {
+      pendingRef.current = false;
     }
   }
+
+  // agar screen reader mengumumkan status
+  const ariaLive = useMemo(() => (isLoading ? "off" : "polite"), [isLoading]);
 
   return (
     <main className="mx-auto max-w-3xl p-6">
@@ -66,9 +91,9 @@ export default function ContactPage() {
         </p>
       </header>
 
-      <form onSubmit={onSubmit} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-4" noValidate>
         {/* Honeypot (hidden) */}
-        <div className="hidden">
+        <div className="hidden" aria-hidden>
           <label className="block text-sm font-medium">Company</label>
           <input
             name="company"
@@ -79,59 +104,81 @@ export default function ContactPage() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium">Nama</label>
+            <label htmlFor="name" className="block text-sm font-medium">
+              Nama
+            </label>
             <input
+              id="name"
               name="name"
               required
+              autoComplete="name"
               className="mt-1 w-full rounded-lg border px-3 py-2"
               placeholder="Nama lengkap"
+              disabled={isLoading}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium">
+              Email
+            </label>
             <input
+              id="email"
               name="email"
               type="email"
               required
+              autoComplete="email"
               className="mt-1 w-full rounded-lg border px-3 py-2"
               placeholder="nama@domain.com"
+              disabled={isLoading}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Subjek</label>
+          <label htmlFor="subject" className="block text-sm font-medium">
+            Subjek
+          </label>
           <input
+            id="subject"
             name="subject"
+            autoComplete="off"
             className="mt-1 w-full rounded-lg border px-3 py-2"
             placeholder="Tentang apa pesannya?"
+            disabled={isLoading}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Pesan</label>
+          <label htmlFor="message" className="block text-sm font-medium">
+            Pesan
+          </label>
           <textarea
+            id="message"
             name="message"
             required
             rows={6}
             className="mt-1 w-full rounded-lg border px-3 py-2"
             placeholder="Tulis pesanmu di sini..."
+            disabled={isLoading}
           />
         </div>
 
         <div className="flex items-center gap-3">
           <button
-            disabled={status.type === "loading"}
+            disabled={isLoading}
             className="inline-flex items-center rounded-lg bg-sky-600 px-4 py-2 text-white hover:bg-sky-700 disabled:opacity-60"
           >
-            {status.type === "loading" ? "Mengirim..." : "Kirim Pesan"}
+            {isLoading ? "Mengirim..." : "Kirim Pesan"}
           </button>
-          {status.type === "success" && (
-            <span className="text-sm text-green-600">{status.message}</span>
-          )}
-          {status.type === "error" && (
-            <span className="text-sm text-red-600">{status.message}</span>
-          )}
+
+          <span role="status" aria-live={ariaLive} className="text-sm">
+            {status.type === "success" && (
+              <span className="text-green-600">{status.message}</span>
+            )}
+            {status.type === "error" && (
+              <span className="text-red-600">{status.message}</span>
+            )}
+          </span>
         </div>
       </form>
 
