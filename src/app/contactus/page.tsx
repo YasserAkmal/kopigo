@@ -19,43 +19,50 @@ export default function ContactPage() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (pendingRef.current) return; // anti double submit
 
-    const fd = new FormData(e.currentTarget);
-    // honeypot (bot akan mengisi ini)
-    if (safeTrim(fd.get("company"))) {
-      setStatus({ type: "success", message: "Terima kasih! (honeypot)" });
-      e.currentTarget.reset();
-      return;
-    }
+    // simpan referensi form SEBELUM ada await
+    const form = e.currentTarget;
 
-    const payload = {
-      name: safeTrim(fd.get("name")),
-      email: safeTrim(fd.get("email")),
-      subject: safeTrim(fd.get("subject")) || "Pesan dari Form Kontak",
-      message: safeTrim(fd.get("message")),
-    };
-
-    // front-end guard
-    if (!payload.name || !payload.email || !payload.message) {
-      setStatus({
-        type: "error",
-        message: "Nama, email, dan pesan wajib diisi.",
-      });
-      return;
-    }
-
-    setStatus({ type: "loading" });
-    pendingRef.current = true;
+    // anti double submit (opsional kalau pakai pendingRef)
+    if ((form as any).__submitting) return;
+    (form as any).__submitting = true;
 
     try {
+      const fd = new FormData(form);
+
+      // honeypot
+      const hp = (fd.get("company") as string | null)?.trim();
+      if (hp) {
+        setStatus({ type: "success", message: "Terima kasih! (honeypot)" });
+        form.reset(); // ← gunakan form, bukan e.target
+        return;
+      }
+
+      const payload = {
+        name: ((fd.get("name") as string) || "").trim(),
+        email: ((fd.get("email") as string) || "").trim(),
+        subject:
+          ((fd.get("subject") as string) || "").trim() ||
+          "Pesan dari Form Kontak",
+        message: ((fd.get("message") as string) || "").trim(),
+      };
+
+      if (!payload.name || !payload.email || !payload.message) {
+        setStatus({
+          type: "error",
+          message: "Nama, email, dan pesan wajib diisi.",
+        });
+        return;
+      }
+
+      setStatus({ type: "loading" });
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      // Cegah parse HTML error page sebagai JSON
       const ct = res.headers.get("content-type") || "";
       if (!ct.includes("application/json")) {
         const text = await res.text();
@@ -68,14 +75,14 @@ export default function ContactPage() {
       if (!res.ok) throw new Error(data?.error || "Gagal mengirim pesan.");
 
       setStatus({ type: "success", message: "Pesan terkirim. Terima kasih!" });
-      e.currentTarget.reset();
+      form.reset(); // ← aman, karena referensi form disimpan
     } catch (err: any) {
       setStatus({
         type: "error",
         message: err?.message || "Terjadi kesalahan.",
       });
     } finally {
-      pendingRef.current = false;
+      (form as any).__submitting = false;
     }
   }
 
