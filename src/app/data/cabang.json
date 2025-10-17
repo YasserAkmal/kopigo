@@ -1,0 +1,52 @@
+{
+  "updatedAt": "2025-10-10",
+  "items": [
+    {
+      "slug": "BUKIT",
+      "name": "Kopigo Bukittinggi",
+      "image": "/dummy-img.jpg",
+      "address": "Jl. Bukittinggi No. 1, Bukittinggi",
+      "phone": "+62 812-0000-0001",
+      "openingHours": "08:00–22:00",
+      "note": "Tempat duduk outdoor",
+      "gmapsQuery": "M9W8+PW Benteng Pasar Atas, Bukittinggi City, West Sumatra"
+    },
+    {
+      "slug": "PONDOK",
+      "name": "Kopigo Pondok",
+      "image": "/dummy-img.jpg",
+      "address": "Ruko BSD Square Blok B-12",
+      "phone": "+62 812-0000-0002",
+      "openingHours": "08:00–22:00",
+      "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra"
+    },
+    {
+      "slug": "SAWAHAN",
+      "name": "Kopigo Sawahan",
+      "image": "/dummy-img.jpg",
+      "address": "Jl. Sawahan No. 1, Padang",
+      "phone": "+62 812-0000-0003",
+      "openingHours": "09:00–23:00",
+      "note": "Live music Jumat",
+      "gmapsQuery": "3939+G7 Sawahan, Padang City, West Sumatra"
+    },
+    {
+      "slug": "PONDOK",
+      "name": "Kopigo Pondok",
+      "image": "/dummy-img.jpg",
+      "address": "Ruko BSD Square Blok B-12",
+      "phone": "+62 812-0000-0002",
+      "openingHours": "08:00–22:00",
+      "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra"
+    },
+    {
+      "slug": "PONDOK",
+      "name": "Kopigo Pondok",
+      "image": "/dummy-img.jpg",
+      "address": "Ruko BSD Square Blok B-12",
+      "phone": "+62 812-0000-0002",
+      "openingHours": "08:00–22:00",
+      "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra"
+    }
+  ]
+}

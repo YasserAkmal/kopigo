@@ -1,105 +1,6 @@
 {
   "categories": [
     {
-      "name": "MANUAL BREW",
-      "items": [
-        {
-          "id": "vietnam-drip-ice",
-          "title": "VIETNAM DRIP ICE",
-          "desc": "Clean and focused, crisp with a soft finish with gentle bitterness; perfect for sunny days.",
-          "price": 30000,
-          "publicId": "VIETNAM_DRIP_ICED_eezkk1"
-        },
-        {
-          "id": "vietnam-drip-hot",
-          "title": "VIETNAM DRIP HOT",
-          "desc": "Bright and easy-going, gentle bitterness meeting a light yet satisfying body. Best enjoyed chilled.",
-          "price": 32000,
-          "publicId": "VIETNAM_DRIP_HOT_aovvn2"
-        },
-        {
-          "id": "v60-black-coffee",
-          "title": "V60 BLACK COFFEE",
-          "desc": "A bold and straightforward cup with clean finish and subtle sweetness, perfect for sunny days.",
-          "price": 58000,
-          "publicId": "V60_BLACK_COFFEE_gxwgz3"
-        }
-      ]
-    },
-    {
-      "name": "NON COFFEE",
-      "items": [
-        {
-          "id": "taro-latte-ice",
-          "title": "TARO LATTE ICE",
-          "desc": "Bright and easy-going, smooth aftertaste meeting a light yet satisfying body. Great both hot or iced.",
-          "price": 39000,
-          "publicId": "TARO_LATTE_oprmyu"
-        },
-        {
-          "id": "redvelvet",
-          "title": "REDVELVET",
-          "desc": "Rich yet balanced—light floral hints, smooth aftertaste, and a bright and refreshing feel, best enjoyed chilled.",
-          "price": 39000,
-          "publicId": "REDVELVET_gq7hsn"
-        },
-        {
-          "id": "iced-vanilla-latte",
-          "title": "ICED VANILLA LATTE",
-          "desc": "Comfort in a glass—aromatic and clean, with light floral hints. Comforting when warm.",
-          "price": 49000,
-          "publicId": "ICE_VANILLA_LATTE_vpqjjc"
-        },
-        {
-          "id": "greentea",
-          "title": "GREENTEA",
-          "desc": "A layered and cozy cup with gentle bitterness and balanced acidity, served over ice.",
-          "price": 49000,
-          "publicId": "GREENTEA_jkuszh"
-        },
-        {
-          "id": "choco-oreo",
-          "title": "CHOCO OREO",
-          "desc": "A bright and refreshing cup with light floral hints and lingering warmth, ideal for quiet mornings.",
-          "price": 42000,
-          "publicId": "CHOCO_OREO_srocot"
-        },
-        {
-          "id": "choco-mint",
-          "title": "CHOCO MINT",
-          "desc": "Rich yet balanced—light floral hints, roasted depth, and a crisp with a soft finish feel, refreshing on ice.",
-          "price": 49000,
-          "publicId": "CHOCO_MINT_suou8w"
-        },
-        {
-          "id": "black-charcoal",
-          "title": "BLACK CHARCOAL",
-          "desc": "A silky-smooth cup with gentle bitterness and subtle sweetness, perfect for sunny days.",
-          "price": 39000,
-          "publicId": "BLACK_CHARCOAL_azebkd"
-        }
-      ]
-    },
-    {
-      "name": "REFRESHMENT",
-      "items": [
-        {
-          "id": "soda-based",
-          "title": "SODA BASED",
-          "desc": "Rich yet balanced—gentle bitterness, clean finish, and a creamy and balanced feel, made for a slow afternoon.",
-          "price": 36000,
-          "publicId": "SODA_BASED_mawdtn"
-        },
-        {
-          "id": "iced-lychee-latte",
-          "title": "ICED LYCHEE LATTE",
-          "desc": "Comfort in a glass—creamy and balanced, with round body. Best enjoyed chilled.",
-          "price": 36000,
-          "publicId": "ICED_LYCHEE_LATTE_d6dlmy"
-        }
-      ]
-    },
-    {
       "name": "SIGNATURE",
       "items": [
         {
@@ -160,6 +61,13 @@
           "publicId": "ICE_CARAMEL_MACHIATTO_ihgtql"
         },
         {
+          "id": "iced-vanilla-latte",
+          "title": "ICED VANILLA LATTE",
+          "desc": "Comfort in a glass—aromatic and clean, with light floral hints. Comforting when warm.",
+          "price": 49000,
+          "publicId": "ICE_VANILLA_LATTE_vpqjjc"
+        },
+        {
           "id": "ice-americano",
           "title": "ICE AMERICANO",
           "desc": "Bright and easy-going, clean finish meeting a light yet satisfying body. Comforting when warm.",
@@ -211,13 +119,6 @@
           "publicId": "CARAMEL_MACHIATTO_k9iqqv"
         },
         {
-          "id": "biscotti-regali",
-          "title": "BISCOTTI REGALI",
-          "desc": "Rich yet balanced—smooth aftertaste, light floral hints, and a aromatic and clean feel, refreshing on ice.",
-          "price": 42000,
-          "publicId": "BISCOTTI_REGALI_qtut1m"
-        },
-        {
           "id": "hot-mocca-latte",
           "title": "HOT MOCCA LATTE",
           "desc": "Clean and focused, light yet satisfying with gentle bitterness; best enjoyed chilled.",
@@ -230,6 +131,106 @@
           "desc": "A layered and cozy cup with extra creamy mouthfeel and gentle bitterness, great both hot or iced.",
           "price": 45000,
           "publicId": "HOT_VANILLA_LATTE_avyj3l"
+        }
+      ]
+    },
+    {
+      "name": "NON COFFEE",
+      "items": [
+        {
+          "id": "taro-latte-ice",
+          "title": "TARO LATTE ICE",
+          "desc": "Bright and easy-going, smooth aftertaste meeting a light yet satisfying body. Great both hot or iced.",
+          "price": 39000,
+          "publicId": "TARO_LATTE_oprmyu"
+        },
+        {
+          "id": "biscotti-regali",
+          "title": "BISCOTTI REGALI",
+          "desc": "Rich yet balanced—smooth aftertaste, light floral hints, and a aromatic and clean feel, refreshing on ice.",
+          "price": 42000,
+          "publicId": "BISCOTTI_REGALI_qtut1m"
+        },
+        {
+          "id": "redvelvet",
+          "title": "REDVELVET",
+          "desc": "Rich yet balanced—light floral hints, smooth aftertaste, and a bright and refreshing feel, best enjoyed chilled.",
+          "price": 39000,
+          "publicId": "REDVELVET_gq7hsn"
+        },
+        {
+          "id": "greentea",
+          "title": "GREENTEA",
+          "desc": "A layered and cozy cup with gentle bitterness and balanced acidity, served over ice.",
+          "price": 49000,
+          "publicId": "GREENTEA_jkuszh"
+        },
+        {
+          "id": "choco-oreo",
+          "title": "CHOCO OREO",
+          "desc": "A bright and refreshing cup with light floral hints and lingering warmth, ideal for quiet mornings.",
+          "price": 42000,
+          "publicId": "CHOCO_OREO_srocot"
+        },
+        {
+          "id": "choco-mint",
+          "title": "CHOCO MINT",
+          "desc": "Rich yet balanced—light floral hints, roasted depth, and a crisp with a soft finish feel, refreshing on ice.",
+          "price": 49000,
+          "publicId": "CHOCO_MINT_suou8w"
+        },
+        {
+          "id": "black-charcoal",
+          "title": "BLACK CHARCOAL",
+          "desc": "A silky-smooth cup with gentle bitterness and subtle sweetness, perfect for sunny days.",
+          "price": 39000,
+          "publicId": "BLACK_CHARCOAL_azebkd"
+        }
+      ]
+    },
+    {
+      "name": "MANUAL BREW",
+      "items": [
+        {
+          "id": "vietnam-drip-ice",
+          "title": "VIETNAM DRIP ICE",
+          "desc": "Clean and focused, crisp with a soft finish with gentle bitterness; perfect for sunny days.",
+          "price": 30000,
+          "publicId": "VIETNAM_DRIP_ICED_eezkk1"
+        },
+        {
+          "id": "vietnam-drip-hot",
+          "title": "VIETNAM DRIP HOT",
+          "desc": "Bright and easy-going, gentle bitterness meeting a light yet satisfying body. Best enjoyed chilled.",
+          "price": 32000,
+          "publicId": "VIETNAM_DRIP_HOT_aovvn2"
+        },
+        {
+          "id": "v60-black-coffee",
+          "title": "V60 BLACK COFFEE",
+          "desc": "A bold and straightforward cup with clean finish and subtle sweetness, perfect for sunny days.",
+          "price": 58000,
+          "publicId": "V60_BLACK_COFFEE_gxwgz3"
+        }
+      ]
+    },
+
+    {
+      "name": "REFRESHMENT",
+      "items": [
+        {
+          "id": "soda-based",
+          "title": "SODA BASED",
+          "desc": "Rich yet balanced—gentle bitterness, clean finish, and a creamy and balanced feel, made for a slow afternoon.",
+          "price": 36000,
+          "publicId": "SODA_BASED_mawdtn"
+        },
+        {
+          "id": "iced-lychee-latte",
+          "title": "ICED LYCHEE LATTE",
+          "desc": "Comfort in a glass—creamy and balanced, with round body. Best enjoyed chilled.",
+          "price": 36000,
+          "publicId": "ICED_LYCHEE_LATTE_d6dlmy"
         }
       ]
     }
