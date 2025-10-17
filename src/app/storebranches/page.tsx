@@ -1,69 +1,42 @@
-// app/storebranches/page.tsx
-import Image from "next/image";
-import { findBranch, mapsLink, mapsEmbedSrc } from "@/app/lib/branches";
+// app/api/contact/route.ts
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-type SP = Record<string, string | string[] | undefined>;
+export const runtime = "nodejs";
 
-export default async function StoreBranches({
-  searchParams,
-}: {
-  searchParams?: Promise<SP> | SP;
-}) {
-  const sp: SP | undefined =
-    typeof (searchParams as any)?.then === "function"
-      ? await (searchParams as Promise<SP>)
-      : (searchParams as SP | undefined);
+export async function POST(req: Request) {
+  try {
+    const { name, email, subject, message } = await req.json();
 
-  const branchParam = typeof sp?.branch === "string" ? sp.branch : null;
-  const branch = findBranch(branchParam) || findBranch("tebet");
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 587),
+      secure: String(process.env.SMTP_SECURE) === "true",
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+    });
 
-  if (!branch) {
-    return (
-      <main className="mx-auto max-w-6xl p-6">
-        <h1 className="text-2xl font-bold">Cabang tidak ditemukan</h1>
-        <p className="text-sm text-gray-500 mt-2">
-          Pastikan parameter <code>?branch=</code> benar.
-        </p>
-      </main>
+    await transporter.sendMail({
+      from: process.env.MAIL_FROM || `"Website" <${process.env.SMTP_USER}>`,
+      to: process.env.MAIL_TO,
+      replyTo: email,
+      subject: subject || "Pesan dari Form Kontak",
+      text: `Dari: ${name} <${email}>\n\n${message}`,
+    });
+
+    return NextResponse.json({ ok: true });
+  } catch (err: any) {
+    // >>> JANGAN lempar error mentah; selalu balas JSON
+    return NextResponse.json(
+      { error: err?.message || "Gagal mengirim pesan." },
+      { status: 400 }
     );
   }
+}
 
-  const link = branch.gmapsQuery ? mapsLink(branch.gmapsQuery) : null;
-  const embed = branch.gmapsQuery ? mapsEmbedSrc(branch.gmapsQuery) : null;
-
-  return (
-    <main className="mx-auto max-w-10xl p-6">
-      <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-sky-950">{branch.name}</h1>
-          <p className="text-sm text-gray-500">
-            {branch.address} • {branch.openingHours} • {branch.phone}
-          </p>
-          {branch.note && (
-            <p className="text-xs text-gray-400 mt-1">{branch.note}</p>
-          )}
-        </div>
-       
-      </header>
-
-
-      {embed && (
-        <section className="mb-8">
-          <div className="aspect-video w-full  h-screen overflow-hidden">
-            <iframe
-              title={`Peta ${branch.name}`}
-              src={embed}
-              referrerPolicy="no-referrer-when-downgrade"
-              loading="lazy"
-              className="h-full w-full"
-              allowFullScreen
-            />
-          </div>
-         
-        </section>
-      )}
-
-      
-    </main>
+// (opsional) GET untuk sanity-check di browser:
+export async function GET() {
+  return NextResponse.json(
+    { ok: false, error: "Method not allowed" },
+    { status: 405 }
   );
 }
