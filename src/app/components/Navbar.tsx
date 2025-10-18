@@ -101,7 +101,7 @@ function StoreDropdownDesktop({
       <div
         role="menu"
         className={cx(
-          "absolute left-1/2 -translate-x-1/2 mt-2 w-[720px] max-w-[90vw]",
+          "absolute -translate-x-3/4 mt-2 w-[720px] max-w-[90vw]",
           "bg-sky-950",
           "shadow-2xl ring-1 ring-black/5 p-4",
           "transition-all duration-150 origin-top",
@@ -217,7 +217,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-sky-950 text-zinc-50">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"

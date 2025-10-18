@@ -22,7 +22,7 @@ const noto = Noto_Sans({
 export const metadata: Metadata = {
   title: "Kopigo",
   description: "Kopigo site",
-  // ❌ themeColor dipindah ke export viewport (di bawah)
+  
   icons: {
     icon: [
       { url: "/LOGO-KOPIGO.svg" },

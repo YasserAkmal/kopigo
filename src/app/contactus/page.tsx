@@ -90,7 +90,7 @@ export default function ContactPage() {
   const ariaLive = useMemo(() => (isLoading ? "off" : "polite"), [isLoading]);
 
   return (
-    <main className="mx-auto max-w-3xl p-6">
+    <main className="mx-auto max-w-10xl p-6">
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Hubungi Kami</h1>
         <p className="text-sm text-gray-500">
@@ -105,7 +105,7 @@ export default function ContactPage() {
           <input
             name="company"
             autoComplete="off"
-            className="mt-1 w-full rounded-lg border px-3 py-2"
+            className="mt-1 w-full  border px-3 py-2"
           />
         </div>
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
               name="name"
               required
               autoComplete="name"
-              className="mt-1 w-full rounded-lg border px-3 py-2"
+              className="mt-1 w-full  border px-3 py-2"
               placeholder="Nama lengkap"
               disabled={isLoading}
             />
@@ -134,8 +134,8 @@ export default function ContactPage() {
               type="email"
               required
               autoComplete="email"
-              className="mt-1 w-full rounded-lg border px-3 py-2"
-              placeholder="nama@domain.com"
+              className="mt-1 w-full  border px-3 py-2"
+              placeholder="nama@email.com"
               disabled={isLoading}
             />
           </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
             id="subject"
             name="subject"
             autoComplete="off"
-            className="mt-1 w-full rounded-lg border px-3 py-2"
+            className="mt-1 w-full  border px-3 py-2"
             placeholder="Tentang apa pesannya?"
             disabled={isLoading}
           />
@@ -164,7 +164,7 @@ export default function ContactPage() {
             name="message"
             required
             rows={6}
-            className="mt-1 w-full rounded-lg border px-3 py-2"
+            className="mt-1 w-full  border px-3 py-2"
             placeholder="Tulis pesanmu di sini..."
             disabled={isLoading}
           />
@@ -173,7 +173,7 @@ export default function ContactPage() {
         <div className="flex items-center gap-3">
           <button
             disabled={isLoading}
-            className="inline-flex items-center rounded-lg bg-sky-600 px-4 py-2 text-white hover:bg-sky-700 disabled:opacity-60"
+            className="inline-flex items-center  bg-sky-950 px-4 py-2 text-white hover:bg-sky-700 disabled:opacity-60"
           >
             {isLoading ? "Mengirim..." : "Kirim Pesan"}
           </button>
@@ -192,13 +192,18 @@ export default function ContactPage() {
       {/* Info kontak statis */}
       <section className="mt-10 grid gap-3 text-sm text-gray-600">
         <div>
-          <span className="font-medium">Email:</span> hello@kopigo.id
+          <span className="font-medium">Email:</span> contact@kopigoasia.com
         </div>
         <div>
           <span className="font-medium">Telepon:</span> +62 812-0000-0000
         </div>
         <div>
-          <span className="font-medium">Alamat:</span> Jl. Contoh No. 1, Jakarta
+          <span className="font-medium">Instagram :</span> @therealkopigo
+        </div>
+        <div>
+          <span className="font-medium">Alamat:</span> Jl. Teuku Umar No.16,
+          Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi, Sumatera Barat
+          26136
         </div>
       </section>
     </main>
