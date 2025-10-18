@@ -2,7 +2,7 @@ import Image from "next/image";
 import HeroSubscription from "./components/HeroSubscription";
 import PromoCarousel from "./components/PromoCarousel";
 import Testimonial from "./components/testimonial";
-import InstagramPost from "./components/InstagramPost";
+import InstagramPhoto from "./components/InstagramPhoto";
 
 export default function Home() {
   return (
@@ -50,14 +50,9 @@ export default function Home() {
         </div>
       </div>
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            <InstagramPost />
-            <InstagramPost />
-            <InstagramPost />
-            <InstagramPost />
-            <InstagramPost />
-            <InstagramPost />
+        <div className="mx-auto max-w-6xl p-6 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="">
+            <InstagramPhoto />
           </div>
         </div>
       </section>

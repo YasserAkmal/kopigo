@@ -1,0 +1,48 @@
+{
+  "updatedAt": "2025-10-19",
+  "items": [
+    {
+      "id": "1_opd1o4",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/1_opd1o4.jpg",
+      "alt": "KOPIGO – suasana kedai sore hari",
+      "width": 1080,
+      "height": 1350,
+      "permalink": "https://www.instagram.com/p/DPvXocoDRcc/"
+    },
+    {
+      "id": "2_mikuxm",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/2_mikuxm.jpg",
+      "alt": "KOPIGO – menu spesial harian",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "3_qeoccv",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/3_qeoccv.jpg",
+      "alt": "KOPIGO – barista menyiapkan kopi",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "4_fqu9oy",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/4_fqu9oy.jpg",
+      "alt": "KOPIGO – ambience interior kedai",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "5_nun6dm",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/5_nun6dm.jpg",
+      "alt": "KOPIGO – menu minuman dingin",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "6_ux5wfo",
+      "src": "https://res.cloudinary.com/dgztp1kvh/image/upload/f_auto,q_auto,w_1080,c_fill,g_auto/6_ux5wfo.jpg",
+      "alt": "KOPIGO – close-up latte art",
+      "width": 1080,
+      "height": 1350
+    }
+  ]
+}
