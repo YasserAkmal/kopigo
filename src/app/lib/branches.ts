@@ -1,32 +1,38 @@
 import cabang from "@/app/data/cabang.json";
 
-export type Branch = (typeof cabang.items)[number];
+export type Branch = {
+  slug: string;
+  name: string;
+  image?: string;
+  address: string;
+  phone: string;
+  openingHours: string;
+  note?: string;
+  gmapsQuery?: string;
+};
 
-export function getBranches(): Branch[] {
-  return cabang.items;
+export function findBranch(slug: string | null): Branch | undefined {
+  if (!slug) return;
+  return cabang.items.find((b) => b.slug === slug);
 }
 
-export function findBranch(slug?: string | null): Branch | null {
-  if (!slug) return null;
-  return cabang.items.find((b) => b.slug === slug) ?? null;
+export function mapsLink(query: string): string {
+  const encoded = encodeURIComponent(query);
+  return `https://www.google.com/maps/search/?api=1&query=${encoded}`;
 }
 
-/** Semua cabang mengarah ke /storebranches?branch=<slug> */
-export function getBranchHref(slug: string) {
-  return `/storebranches?branch=${encodeURIComponent(slug)}`;
-}
+export function mapsEmbedSrc(query: string): string {
+  const key = process.env.NEXT_PUBLIC_GMAPS_KEY;
+  const encoded = encodeURIComponent(query);
 
-export function mapsLink(query: string) {
-  // Link luar (buka tab baru) – aman tanpa API key
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    query
-  )}`;
-}
+  // ✅ kalau key kosong, jangan crash — pakai fallback embed tanpa key
+  if (!key) {
+    console.warn(
+      "⚠️  NEXT_PUBLIC_GMAPS_KEY tidak ditemukan, pakai fallback embed."
+    );
+    return `https://www.google.com/maps?q=${encoded}&output=embed`;
+  }
 
-export function mapsEmbedSrc(query: string) {
-  // Iframe embed sederhana tanpa API key
-  // Bisa pakai format q=<query>&output=embed
-  return `https://www.google.com/maps?q=${encodeURIComponent(
-    query
-  )}&output=embed`;
+  return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${encoded}`;
 }
+ 

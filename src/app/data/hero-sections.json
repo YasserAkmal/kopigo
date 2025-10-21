@@ -1,0 +1,92 @@
+{
+  "updatedAt": "2025-10-20",
+  "items": [
+    {
+      "key": "philosophy",
+      "title": "Our Philosophy",
+      "description": "We believe coffee should move as fast as life — without losing its soul. Every cup we serve is built on three pillars: speed, quality, and connection. We exist not just to serve coffee, but to build meaningful places — where work, ideas, and community flow together. and one day, Asia",
+      "image": {
+        "src": "/dummy-img.jpg",
+        "alt": "Coffee subscription products"
+      },
+      "cta": { "label": "More About Us", "href": "/aboutus" },
+      "theme": {
+        "background": "#FAF8F6",
+        "headingColor": "text-sky-950",
+        "textColor": "text-sky-950",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+      },
+      "layout": {
+        "reverseOnDesktop": false
+      }
+    },
+    {
+      "key": "GrowthStory",
+      "title": "Our Growth Story",
+      "description": "From one humble bar in Bukittinggi to multiple outlets across Sumatra, KOPIGO continues to grow with one mission: to make great coffee an everyday culture. Next stops: Jakarta, Bali, Surabaya.",
+      "image": {
+        "src": "/dummy-img.jpg",
+        "alt": "Coffee subscription products"
+      },
+      "cta": {
+        "label": "Explore Locations",
+        "href": "/storebranches?branch=pondok"
+      },
+      "theme": {
+        "background": "#fff",
+        "headingColor": "text-sky-950",
+        "textColor": "text-sky-950",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+      },
+      "layout": {
+        "reverseOnDesktop": true
+      }
+    },
+    {
+      "key": "Commitment",
+      "title": "Our Commitment",
+      "description": "We build for people, not hype. Our growth is powered by operational discipline, sustainable sourcing, and community-driven experiences.",
+      "descriptionSecondary": "Because good coffee isn’t just brewed — it’s built.",
+      "image": {
+        "src": "",
+        "alt": ""
+      },
+      "cta": {
+        "label": "",
+        "href": ""
+      },
+      "theme": {
+        "background": "#FAF8F6",
+        "headingColor": "text-sky-950",
+        "textColor": "text-sky-950",
+        "buttonClass": ""
+      },
+      "layout": {
+        "reverseOnDesktop": true
+      }
+    },
+    {
+      "key": "Movement",
+      "title": "Join the Movement",
+      "description": "KOPIGO is more than a coffee brand — it’s a movement of local excellence meeting global standards. If you share our vision for authentic, future-forward coffee experiences, let’s build together.",
+      "descriptionSecondary": "",
+      "image": {
+        "src": "/dummy-img.jpg",
+        "alt": "Coffee subscription products"
+      },
+      "cta": {
+        "label": "Collaborate With KOPIGO",
+        "href": "/contactus"
+      },
+      "theme": {
+        "background": "#fff",
+        "headingColor": "text-sky-950",
+        "textColor": "text-sky-950",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+      },
+      "layout": {
+        "reverseOnDesktop": false
+      }
+    }
+  ]
+}

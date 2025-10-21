@@ -90,7 +90,7 @@ export default function ContactPage() {
   const ariaLive = useMemo(() => (isLoading ? "off" : "polite"), [isLoading]);
 
   return (
-    <main className="mx-auto max-w-10xl p-6">
+    <main className="mx-auto max-w-7xl p-6">
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Hubungi Kami</h1>
         <p className="text-sm text-gray-500">

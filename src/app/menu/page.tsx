@@ -1,8 +1,10 @@
 // app/menu/page.tsx
+"use client";
 import Link from "next/link";
 import MenuCard from "@/app/components/MenuCard";
 import menuData from "@/app/data/menu.json";
 import Image from "next/image";
+import GradualBlur from "../components/GradualBlur";
 
 type SP = Record<string, string | string[] | undefined>;
 type MenuItem = {
@@ -63,30 +65,30 @@ export default async function MenuPage({
   return (
     <main>
       <section className="relative">
-              <div className="absolute inset-0 -z-10">
-                <Image
-                  src="/bg.jpg" // ganti sesuai asetmu di /public
-                  alt=""
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/40" />
-              </div>
-      
-              <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
-                  Menu Kopigo
-                </h1>
-                <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
-                  Enjoy a variety of coffee and specialty drinks at Kopigo—a vibrant spot to hang out, create, and express yourself.
-                </p>
-              </div>
-            </section>
-      <section className="bg-white">
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/bg.jpg" // ganti sesuai asetmu di /public
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
+            Menu Kopigo
+          </h1>
+          <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
+            Enjoy a variety of coffee and specialty drinks at Kopigo—a vibrant
+            spot to hang out, create, and express yourself.
+          </p>
+        </div>
+      </section>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Tabs kategori */}
           <div className=" flex flex-wrap gap-2">
             {allTabs.map((tab) => {
@@ -148,6 +150,16 @@ export default async function MenuPage({
           )}
         </div>
       </section>
+      <GradualBlur
+        target="page"
+        position="bottom"
+        height="7rem"
+        strength={3}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+      />
     </main>
   );
 }

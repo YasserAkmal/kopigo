@@ -2,7 +2,7 @@
   "updatedAt": "2025-10-10",
   "items": [
     {
-      "slug": "BUKIT",
+      "slug": "bukit",
       "name": "Kopigo Bukittinggi",
       "image": "/dummy-img.jpg",
       "address": "Jl. Teuku Umar No.16, Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi, Sumatera Barat 26136",
@@ -12,7 +12,7 @@
       "gmapsQuery": "M9W8+PW Benteng Pasar Atas, Bukittinggi City, West Sumatra"
     },
     {
-      "slug": "PONDOK",
+      "slug": "pondok",
       "name": "Kopigo Pondok",
       "image": "/dummy-img.jpg",
       "address": "Jl. Kelenteng No.2, Kp. Pd., Kec. Padang Bar., Kota Padang, Sumatera Barat 25212",
@@ -21,7 +21,7 @@
       "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra"
     },
     {
-      "slug": "SAWAHAN",
+      "slug": "sawahan",
       "name": "Kopigo Sawahan",
       "image": "/dummy-img.jpg",
       "address": "Jl. Sawahan Dalam No.41, Sawahan, Kec. Padang Tim., Kota Padang, Sumatera Barat 25171",

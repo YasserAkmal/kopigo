@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
             About Kopigo
           </h1>
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
       {/* MISI / TAGLINE */}
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <h2 className="font-serif text-2xl sm:text-3xl text-sky-950">
@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div className="relative aspect-[4/3] w-full overflow-hidden ">
               <Image
@@ -97,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h3 className="font-serif text-2xl sm:text-3xl text-sky-950">
             Our Values
           </h3>
@@ -128,7 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section>
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <h3 className="font-serif text-2xl text-sky-950">
@@ -163,7 +163,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-10xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className=" p-6 sm:p-8 lg:p-10 text-center">
             <h4 className="font-serif text-2xl text-sky-950">
               Ready to Hang Out at Kopigo?
