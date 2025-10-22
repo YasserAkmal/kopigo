@@ -161,7 +161,7 @@ function StoreAccordionMobile({ onNavigate }: { onNavigate?: () => void }) {
         className="w-full rounded-lg px-3 py-2 text-left text-sm inline-flex items-center justify-between hover:underline underline-offset-4"
         aria-expanded={open}
       >
-        <span>STORE</span>
+        <span>Locations</span>
         <ChevronDown
           className={cx("h-4 w-4 transition-transform", open && "rotate-180")}
         />
