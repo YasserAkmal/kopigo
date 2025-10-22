@@ -32,7 +32,7 @@ export default async function StoreBranches({
     <main className="mx-auto max-w-7xl p-6">
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-sky-950">{branch.name}</h1>
+          <h1 className="text-2xl font-bold text-[#111F15]">{branch.name}</h1>
           <p className="text-sm text-gray-500">
             {branch.address} • {branch.openingHours} • {branch.phone}
           </p>

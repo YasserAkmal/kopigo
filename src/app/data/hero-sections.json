@@ -12,9 +12,9 @@
       "cta": { "label": "More About Us", "href": "/aboutus" },
       "theme": {
         "background": "#FAF8F6",
-        "headingColor": "text-sky-950",
-        "textColor": "text-sky-950",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+        "headingColor": "text-[#111F15]",
+        "textColor": "text-[#111F15]",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": false
@@ -34,9 +34,9 @@
       },
       "theme": {
         "background": "#fff",
-        "headingColor": "text-sky-950",
-        "textColor": "text-sky-950",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+        "headingColor": "text-[#111F15]",
+        "textColor": "text-[#111F15]",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": true
@@ -57,8 +57,8 @@
       },
       "theme": {
         "background": "#FAF8F6",
-        "headingColor": "text-sky-950",
-        "textColor": "text-sky-950",
+        "headingColor": "text-[#111F15]",
+        "textColor": "text-[#111F15]",
         "buttonClass": ""
       },
       "layout": {
@@ -80,9 +80,9 @@
       },
       "theme": {
         "background": "#fff",
-        "headingColor": "text-sky-950",
-        "textColor": "text-sky-950",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-sky-950"
+        "headingColor": "text-[#111F15]",
+        "textColor": "text-[#111F15]",
+        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": false

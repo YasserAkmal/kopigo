@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h2 className="font-serif text-2xl sm:text-3xl text-sky-950">
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#111F15]">
                 Our Mission
               </h2>
               <p className="mt-4 text-zinc-700 leading-relaxed">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </div>
             <div className="p-6">
               <p className="text-zinc-800">
-                <span className="font-serif text-sky-950">Kopigo</span>
+                <span className="font-serif text-[#111F15]">Kopigo</span>
                 was born from the culture of hanging out: random chats that
                 spark ideas, creations born from playfulness, and laughter that
                 lightens the day. Express yourself—we’ve got the space for it.
@@ -76,7 +76,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h3 className="font-serif text-2xl text-sky-950">
+              <h3 className="font-serif text-2xl text-[#111F15]">
                 Your Favorite Hangout Spot
               </h3>
               <p className="mt-4 text-zinc-700 leading-relaxed">
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
       <section className="bg-[#FAF8F6]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <h3 className="font-serif text-2xl sm:text-3xl text-sky-950">
+          <h3 className="font-serif text-2xl sm:text-3xl text-[#111F15]">
             Our Values
           </h3>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 key={v.title}
                 className=" bg-white border border-black/5 p-6"
               >
-                <p className="font-serif text-sky-950">{v.title}</p>
+                <p className="font-serif text-[#111F15]">{v.title}</p>
                 <p className="mt-2 text-zinc-700">{v.desc}</p>
               </div>
             ))}
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h3 className="font-serif text-2xl text-sky-950">
+              <h3 className="font-serif text-2xl text-[#111F15]">
                 {" "}
                 The Kopigo Team
               </h3>
@@ -165,7 +165,7 @@ export default function AboutPage() {
       <section className="bg-[#FAF8F6]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className=" p-6 sm:p-8 lg:p-10 text-center">
-            <h4 className="font-serif text-2xl text-sky-950">
+            <h4 className="font-serif text-2xl text-[#111F15]">
               Ready to Hang Out at Kopigo?
             </h4>
             <p className="mt-2 text-zinc-700">

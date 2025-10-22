@@ -38,13 +38,13 @@ export default function MenuCard({
       </div>
 
       <div className="p-4 sm:p-5">
-        <h3 className="font-serif text-sky-950 text-base sm:text-lg tracking-tight">
+        <h3 className="font-serif text-[#111F15] text-base sm:text-lg tracking-tight">
           {title}
         </h3>
         {desc && <p className="mt-1 text-sm text-zinc-700">{desc}</p>}
 
         {/* <div className="mt-4 flex items-center justify-between">
-          <p className="text-sky-950 font-semibold">{formatIDR(price)}</p>
+          <p className="text-[#111F15] font-semibold">{formatIDR(price)}</p>
         </div> */}
       </div>
     </article>

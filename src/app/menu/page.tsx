@@ -106,7 +106,7 @@ export default async function MenuPage({
                     "px-4 py-2 text-sm transition",
                     isActive
                       ? "bg-sky-950 text-white border-sky-950"
-                      : "bg-white text-sky-950  hover:border-bottom-sky-950",
+                      : "bg-white text-[#111F15]  hover:border-bottom-sky-950",
                   ].join(" ")}
                 >
                   {tab.name}
@@ -119,7 +119,7 @@ export default async function MenuPage({
           {visibleCategories.map((cat) => (
             <div key={cat.name} className="mt-8">
               {(selectedName === "All" || visibleCategories.length > 1) && (
-                <h2 className="font-serif text-lg sm:text-xl text-sky-950 mb-4">
+                <h2 className="font-serif text-lg sm:text-xl text-[#111F15] mb-4">
                   {cat.name}
                 </h2>
               )}
