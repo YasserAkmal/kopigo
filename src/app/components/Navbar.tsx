@@ -91,7 +91,7 @@ function StoreDropdownDesktop({
             : "font-normal"
         )}
       >
-        STORE
+        Locations
         <ChevronDown
           className={cx("h-4 w-4 transition-transform", open && "rotate-180")}
         />
