@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0c4a6e" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+    { media: "(prefers-color-scheme: light)", color: "#111F15" },
+    { media: "(prefers-color-scheme: dark)", color: "#111F15" },
   ],
 };
 
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <footer
           id="footer"
-          className="border-t border-black/5 py-10 text-center text-sm text-gray-500"
+          className="border-t bg-[#111F15] border-black/5 py-10 text-center text-sm text-gray-500"
         >
           © {new Date().getFullYear()} Kopigo. All rights reserved.
         </footer>
