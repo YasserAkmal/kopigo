@@ -14,11 +14,11 @@ function cx(...classes: Array<string | false | null | undefined>) {
 }
 
 const NAV_ITEMS = [
-  { label: "DASHBOARD", href: "/" },
-  { label: "ABOUT US", href: "/aboutus" },
-  { label: "MENU", href: "/menu" },
-  { label: "STORE", href: "/storebranches" },
-  { label: "CONTACT US", href: "/contactus" },
+  { label: "Dashboard", href: "/" },
+  { label: "About Us", href: "/aboutus" },
+  { label: "Our Menu", href: "/menu" },
+  { label: "Locations", href: "/storebranches" },
+  { label: "Contact Us", href: "/contactus" },
 ] as const;
 
 const getBranchHref = (slug: string) =>
@@ -240,7 +240,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) =>
-              item.label === "STORE" ? (
+              item.label === "Locations" ? (
                 <StoreDropdownDesktop
                   key={item.href}
                   isActive={isActive(item.href)}
@@ -292,7 +292,7 @@ export default function Navbar() {
           <div className="mt-2">
             <div className="flex flex-col gap-1 py-2">
               {NAV_ITEMS.map((item) =>
-                item.label === "STORE" ? (
+                item.label === "Locations" ? (
                   <StoreAccordionMobile
                     key={`m-${item.href}`}
                     onNavigate={() => setOpen(false)}
