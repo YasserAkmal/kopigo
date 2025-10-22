@@ -204,18 +204,61 @@ export default function ContactPage() {
           {/* Static contact info */}
           <section className="mt-10 grid gap-3 text-sm text-gray-600">
             <div>
-              <span className="font-medium">Email:</span> contact@kopigoasia.com
+              <span className="font-medium">Email: </span>
+              <a
+                href="mailto:contact@kopigoasia.com"
+                className="text-sky-700 hover:underline"
+              >
+                contact@kopigoasia.com
+              </a>
             </div>
+
             <div>
-              <span className="font-medium">Phone:</span> +62 812-0000-0000
+              <span className="font-medium">Phone: </span>
+              <a
+                href="https://wa.me/6285890038225"
+                target="_blank"
+                className="text-sky-700 hover:underline"
+              >
+                +62&nbsp;858-9003-8225
+              </a>
             </div>
+
             <div>
-              <span className="font-medium">Instagram:</span> @therealkopigo
+              <span className="font-medium">LinkedIn: </span>
+              <a
+                href="https://www.linkedin.com/company/kopigoutamaindonesia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:underline"
+              >
+                Kopigoutamaindonesia
+              </a>
             </div>
+
             <div>
-              <span className="font-medium">Address:</span> Jl. Teuku Umar
-              No.16, Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi,
-              Sumatera Barat 26136
+              <span className="font-medium">Instagram: </span>
+              <a
+                href="https://www.instagram.com/therealkopigo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:underline"
+              >
+                @therealkopigo
+              </a>
+            </div>
+
+            <div>
+              <span className="font-medium">Address: </span>
+              <a
+                href="https://www.google.com/maps/place/K+O+P+I+G+O/@-0.3031384,100.3624037,17z/data=!3m1!4b1!4m6!3m5!1s0x2fd539f41bca7507:0xdb1d47323bbe5b9e!8m2!3d-0.3031384!4d100.3672746!16s%2Fg%2F11gmxpg671?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:underline"
+              >
+                Jl. Teuku Umar No.16, Benteng Ps. Atas, Kec. Guguk Panjang, Kota
+                Bukittinggi, Sumatera Barat 26136
+              </a>
             </div>
           </section>
         </section>
