@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ebGaramond:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   /* Warna dasar */
@@ -8,7 +8,7 @@
 
   /* Map nama font dari Google Fonts ke CSS variable */
   --font-noto-sans: "Noto Sans";
-  --font-lora: "Lora";
+  --font-ebGaramond: "ebGaramond";
 }
 
 /* Tailwind v4 tokens */
@@ -21,7 +21,7 @@
     "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
-  --font-serif: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman",
+  --font-serif: var(--font-ebGaramond), ui-serif, Georgia, Cambria, "Times New Roman",
     Times, serif;
 
   /* (Opsional) mono */
@@ -33,7 +33,7 @@
 .font-noto {
   font-family: var(--font-sans);
 }
-.font-lora {
+.font-ebGaramond {
   font-family: var(--font-serif);
 }
 
@@ -44,7 +44,7 @@ body {
   font-family: var(--font-sans);
 }
 
-/* (Opsional) Heading default pakai Lora — hapus jika tidak perlu
+/* (Opsional) Heading default pakai ebGaramond — hapus jika tidak perlu
 @layer base {
   h1, h2, h3 {
     font-family: var(--font-serif);

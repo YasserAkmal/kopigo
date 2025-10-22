@@ -1,14 +1,15 @@
 // app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Lora, Noto_Sans } from "next/font/google";
+import { EB_Garamond, Noto_Sans } from "next/font/google"; 
 import { ReactNode } from "react";
 import Navbar from "./components/Navbar";
 
-const lora = Lora({
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lora",
+  weight: ["400", "500", "600", "700", "800"], // pilih yang kamu perlu
+  style: ["normal", "italic"], // opsional; hapus kalau tak perlu italic
+  variable: "--font-eb-garamond",
   display: "swap",
 });
 
@@ -22,7 +23,6 @@ const noto = Noto_Sans({
 export const metadata: Metadata = {
   title: "Kopigo",
   description: "Kopigo site",
-
   icons: {
     icon: [
       { url: "/LOGO-KOPIGO.svg" },
@@ -34,12 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ Next 15: themeColor diletakkan di viewport
 export const viewport: Viewport = {
-  // satu warna:
-  // themeColor: "#0c4a6e",
-
-  // atau mode light/dark:
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#0c4a6e" },
     { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
@@ -48,7 +43,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`h-full ${noto.variable} ${lora.variable}`}>
+    <html
+      lang="en"
+      className={`h-full ${noto.variable} ${ebGaramond.variable}`}
+    >
       <body className="min-h-screen bg-white text-gray-900 font-sans">
         <Navbar />
         {children}

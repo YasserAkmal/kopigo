@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
 
 type Status = {
@@ -13,44 +14,38 @@ export default function ContactPage() {
 
   const isLoading = status.type === "loading";
 
-  // helper kecil
   const safeTrim = (v: FormDataEntryValue | null) =>
     (typeof v === "string" ? v : "").trim();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    // simpan referensi form SEBELUM ada await
     const form = e.currentTarget;
 
-    // anti double submit (opsional kalau pakai pendingRef)
     if ((form as any).__submitting) return;
     (form as any).__submitting = true;
 
     try {
       const fd = new FormData(form);
 
-      // honeypot
-      const hp = (fd.get("company") as string | null)?.trim();
+      // Honeypot
+      const hp = safeTrim(fd.get("company"));
       if (hp) {
-        setStatus({ type: "success", message: "Terima kasih! (honeypot)" });
-        form.reset(); // ← gunakan form, bukan e.target
+        setStatus({ type: "success", message: "Thanks! (honeypot)" });
+        form.reset();
         return;
       }
 
       const payload = {
-        name: ((fd.get("name") as string) || "").trim(),
-        email: ((fd.get("email") as string) || "").trim(),
-        subject:
-          ((fd.get("subject") as string) || "").trim() ||
-          "Pesan dari Form Kontak",
-        message: ((fd.get("message") as string) || "").trim(),
+        name: safeTrim(fd.get("name")),
+        email: safeTrim(fd.get("email")),
+        subject: safeTrim(fd.get("subject")) || "Message from Contact Form",
+        message: safeTrim(fd.get("message")),
       };
 
       if (!payload.name || !payload.email || !payload.message) {
         setStatus({
           type: "error",
-          message: "Nama, email, dan pesan wajib diisi.",
+          message: "Name, email, and message are required.",
         });
         return;
       }
@@ -67,145 +62,164 @@ export default function ContactPage() {
       if (!ct.includes("application/json")) {
         const text = await res.text();
         throw new Error(
-          `Server mengembalikan ${res.status}. ${text.slice(0, 140)}…`
+          `Server responded ${res.status}. ${text.slice(0, 140)}…`
         );
       }
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Gagal mengirim pesan.");
+      if (!res.ok) throw new Error(data?.error || "Failed to send message.");
 
-      setStatus({ type: "success", message: "Pesan terkirim. Terima kasih!" });
-      form.reset(); // ← aman, karena referensi form disimpan
+      setStatus({ type: "success", message: "Message sent. Thank you!" });
+      form.reset();
     } catch (err: any) {
       setStatus({
         type: "error",
-        message: err?.message || "Terjadi kesalahan.",
+        message: err?.message || "Something went wrong.",
       });
     } finally {
       (form as any).__submitting = false;
     }
   }
 
-  // agar screen reader mengumumkan status
   const ariaLive = useMemo(() => (isLoading ? "off" : "polite"), [isLoading]);
 
   return (
     <main className="mx-auto max-w-7xl p-6">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold">Hubungi Kami</h1>
-        <p className="text-sm text-gray-500">
-          Ada pertanyaan atau kerjasama? Kirimkan pesan melalui form di bawah.
-        </p>
-      </header>
-
-      <form onSubmit={onSubmit} className="space-y-4" noValidate>
-        {/* Honeypot (hidden) */}
-        <div className="hidden" aria-hidden>
-          <label className="block text-sm font-medium">Company</label>
-          <input
-            name="company"
-            autoComplete="off"
-            className="mt-1 w-full  border px-3 py-2"
-          />
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Nama
-            </label>
-            <input
-              id="name"
-              name="name"
-              required
-              autoComplete="name"
-              className="mt-1 w-full  border px-3 py-2"
-              placeholder="Nama lengkap"
-              disabled={isLoading}
+      <div className="grid gap-10 md:grid-cols-2 items-start">
+        {/* Left image (hidden on mobile) */}
+        <aside className="hidden md:block">
+          <div className="relative w-full h-[75vh] overflow-hidden shadow-sm">
+            <Image
+              src="/dummy-img.jpg"
+              alt="Kopigo — contact illustration"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 0px, (max-width: 1200px) 40vw, 600px"
+              priority
             />
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              className="mt-1 w-full  border px-3 py-2"
-              placeholder="nama@email.com"
-              disabled={isLoading}
-            />
-          </div>
-        </div>
+        </aside>
 
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium">
-            Subjek
-          </label>
-          <input
-            id="subject"
-            name="subject"
-            autoComplete="off"
-            className="mt-1 w-full  border px-3 py-2"
-            placeholder="Tentang apa pesannya?"
-            disabled={isLoading}
-          />
-        </div>
+        {/* Right: form */}
+        <section>
+          <header className="mb-8">
+            <h1 className="text-3xl font-bold font-serif">Contact Us</h1>
+            <p className="text-sm text-gray-500">
+              Have a question or partnership idea? Send us a message using the
+              form below.
+            </p>
+          </header>
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium">
-            Pesan
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            rows={6}
-            className="mt-1 w-full  border px-3 py-2"
-            placeholder="Tulis pesanmu di sini..."
-            disabled={isLoading}
-          />
-        </div>
+          <form onSubmit={onSubmit} className="space-y-4" noValidate>
+            {/* Honeypot (hidden) */}
+            <div className="hidden" aria-hidden>
+              <label className="block text-sm font-medium">Company</label>
+              <input
+                name="company"
+                autoComplete="off"
+                className="mt-1 w-full border px-3 py-2"
+              />
+            </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            disabled={isLoading}
-            className="inline-flex items-center  bg-sky-950 px-4 py-2 text-white hover:bg-sky-700 disabled:opacity-60"
-          >
-            {isLoading ? "Mengirim..." : "Kirim Pesan"}
-          </button>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  autoComplete="name"
+                  className="mt-1 w-full border px-3 py-2"
+                  placeholder="Your full name"
+                  disabled={isLoading}
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  className="mt-1 w-full border px-3 py-2"
+                  placeholder="you@example.com"
+                  disabled={isLoading}
+                />
+              </div>
+            </div>
 
-          <span role="status" aria-live={ariaLive} className="text-sm">
-            {status.type === "success" && (
-              <span className="text-green-600">{status.message}</span>
-            )}
-            {status.type === "error" && (
-              <span className="text-red-600">{status.message}</span>
-            )}
-          </span>
-        </div>
-      </form>
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium">
+                Subject
+              </label>
+              <input
+                id="subject"
+                name="subject"
+                autoComplete="off"
+                className="mt-1 w-full border px-3 py-2"
+                placeholder="What is this about?"
+                disabled={isLoading}
+              />
+            </div>
 
-      {/* Info kontak statis */}
-      <section className="mt-10 grid gap-3 text-sm text-gray-600">
-        <div>
-          <span className="font-medium">Email:</span> contact@kopigoasia.com
-        </div>
-        <div>
-          <span className="font-medium">Telepon:</span> +62 812-0000-0000
-        </div>
-        <div>
-          <span className="font-medium">Instagram :</span> @therealkopigo
-        </div>
-        <div>
-          <span className="font-medium">Alamat:</span> Jl. Teuku Umar No.16,
-          Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi, Sumatera Barat
-          26136
-        </div>
-      </section>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={6}
+                className="mt-1 w-full border px-3 py-2"
+                placeholder="Write your message here…"
+                disabled={isLoading}
+              />
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                disabled={isLoading}
+                className="inline-flex items-center bg-sky-950 px-4 py-2 text-white hover:bg-sky-800 disabled:opacity-60 rounded"
+              >
+                {isLoading ? "Sending..." : "Send Message"}
+              </button>
+
+              <span role="status" aria-live={ariaLive} className="text-sm">
+                {status.type === "success" && (
+                  <span className="text-green-600">{status.message}</span>
+                )}
+                {status.type === "error" && (
+                  <span className="text-red-600">{status.message}</span>
+                )}
+              </span>
+            </div>
+          </form>
+
+          {/* Static contact info */}
+          <section className="mt-10 grid gap-3 text-sm text-gray-600">
+            <div>
+              <span className="font-medium">Email:</span> contact@kopigoasia.com
+            </div>
+            <div>
+              <span className="font-medium">Phone:</span> +62 812-0000-0000
+            </div>
+            <div>
+              <span className="font-medium">Instagram:</span> @therealkopigo
+            </div>
+            <div>
+              <span className="font-medium">Address:</span> Jl. Teuku Umar
+              No.16, Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi,
+              Sumatera Barat 26136
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
   );
 }
