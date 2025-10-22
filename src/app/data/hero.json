@@ -13,11 +13,11 @@
       "overlay": "bg-black/40",
       "cta": {
         "label": "Connect With Us",
-        "href": "/menu"
+        "href": "/contactus"
       },
       "ctaSecondary": {
         "label": "Visit Us",
-        "href": "/storebranches"
+        "href": "/storebranches?branch=pondok"
       },
       "align": "center"
     },

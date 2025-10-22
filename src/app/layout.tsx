@@ -22,7 +22,7 @@ const noto = Noto_Sans({
 export const metadata: Metadata = {
   title: "Kopigo",
   description: "Kopigo site",
-  
+
   icons: {
     icon: [
       { url: "/LOGO-KOPIGO.svg" },
@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <footer
           id="footer"
-          className="border-t border-black/5 py-10 mt-16 text-center text-sm text-gray-500"
+          className="border-t border-black/5 py-10 text-center text-sm text-gray-500"
         >
           © {new Date().getFullYear()} Kopigo. All rights reserved.
         </footer>

@@ -104,7 +104,7 @@ export default function MainHero({
                 {cta?.href && cta?.label && (
                   <Link href={cta.href} className="w-full sm:w-auto">
                     <span
-                      className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg px-6 py-3
+                      className="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3
                        bg-sky-950 text-white font-semibold hover:bg-sky-900
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600
                        transition"
@@ -117,7 +117,7 @@ export default function MainHero({
                 {ctaSecondary?.href && ctaSecondary?.label && (
                   <Link href={ctaSecondary.href} className="w-full sm:w-auto">
                     <span
-                      className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg px-6 py-3
+                      className="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3
                        border border-white/80 text-white/90 hover:bg-white/10
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600
                        transition"

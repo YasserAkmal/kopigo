@@ -40,7 +40,7 @@ export default function HeroSubscription({
           >
             {/* Gambar */}
             <div className="relative w-full">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={item.image?.src}
                   alt={item.image?.alt || ""}
@@ -124,7 +124,7 @@ function ContentBlock({
         <div className={center ? "mt-8 flex justify-center" : "mt-8"}>
           <Link
             href={item.cta.href}
-            className={`inline-flex items-center px-6 py-3 font-semibold transition rounded ${buttonClass}`}
+            className={`inline-flex items-center px-6 py-3 font-semibold transition ${buttonClass}`}
           >
             {item.cta.label}
           </Link>

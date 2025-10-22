@@ -18,9 +18,9 @@ export default function Home() {
           <HeroVideo variant="Commitment" />
           <HeroSubscription variant="Movement" />
         </div>
-        <div className="bg-[#FAF8F6] py-12 sm:py-16">
+        {/* <div className="bg-[#FAF8F6] py-12 sm:py-16">
           <PromoCarousel />
-        </div>
+        </div> */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h2 className="font-serif text-center text-2xl sm:text-3xl lg:text-4xl text-sky-950 mb-8 sm:mb-10">
             What they say
@@ -29,13 +29,10 @@ export default function Home() {
             <Testimonial />
             <Testimonial />
             <Testimonial />
-            <Testimonial />
-            <Testimonial />
-            <Testimonial />
           </div>
         </div>
-        <section className="bg-[#FAF8F6]">
-          <div className="mx-auto max-w-6xl p-6 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <section className="bg-[#FAF8F6] ">
+          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 py-12 sm:py-16">
             <div className="">
               <InstagramPhoto />
             </div>
