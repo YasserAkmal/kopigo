@@ -174,7 +174,7 @@ export default function AboutPage() {
             </p>
             <a
               href="/menu"
-              className="mt-6 inline-flex items-center justify-center bg-sky-950 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-900 transition"
+              className="mt-6 inline-flex items-center justify-center bg-sky- px-6 py-3 text-sm font-semibold text-white hover:bg-sky-900 transition"
             >
               Explore Menu
             </a>

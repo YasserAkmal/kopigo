@@ -25,7 +25,7 @@ export default function HeroSubscription({
   const headingColor = item.theme?.headingColor ?? "text-[#111F15]";
   const textColor = item.theme?.textColor ?? "text-[#111F15]";
   const buttonClass =
-    item.theme?.buttonClass ?? "bg-sky-950 hover:bg-sky-800 text-white";
+    item.theme?.buttonClass ?? "bg-[#111F15] hover:bg-sky-800 text-white";
   const reverse = !!item.layout?.reverseOnDesktop;
 
   return (

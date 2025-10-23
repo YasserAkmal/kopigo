@@ -116,8 +116,8 @@ export default function PromoCarousel() {
               className={`h-2.5 w-2.5 rounded-full transition
                 ${
                   i === selectedIndex
-                    ? "bg-sky-950"
-                    : "bg-sky-950/40 hover:opacity-80"
+                    ? "bg-[#111F15]"
+                    : "bg-[#111F15]/40 hover:opacity-80"
                 }`}
             />
           ))}

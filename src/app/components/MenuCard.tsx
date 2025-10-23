@@ -31,7 +31,7 @@ export default function MenuCard({
           gravity="auto"
         />
         {badge && (
-          <span className="absolute left-3 top-3 bg-sky-950/90 px-2 py-1 text-[11px] font-semibold text-white">
+          <span className="absolute left-3 top-3 bg-[#111F15]/90 px-2 py-1 text-[11px] font-semibold text-white">
             {badge}
           </span>
         )}

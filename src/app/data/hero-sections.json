@@ -14,7 +14,7 @@
         "background": "#FAF8F6",
         "headingColor": "text-[#111F15]",
         "textColor": "text-[#111F15]",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
+        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": false
@@ -36,7 +36,7 @@
         "background": "#fff",
         "headingColor": "text-[#111F15]",
         "textColor": "text-[#111F15]",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
+        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": true
@@ -82,7 +82,7 @@
         "background": "#fff",
         "headingColor": "text-[#111F15]",
         "textColor": "text-[#111F15]",
-        "buttonClass": "border border-sky-950 hover:bg-[#FAF8F6] text-[#111F15]"
+        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
       },
       "layout": {
         "reverseOnDesktop": false

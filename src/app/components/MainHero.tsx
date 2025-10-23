@@ -105,7 +105,7 @@ export default function MainHero({
                   <Link href={cta.href} className="w-full sm:w-auto">
                     <span
                       className="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3
-                       bg-sky-950 text-white font-semibold hover:bg-sky-900
+                       bg-[#111F15] text-white font-semibold hover:bg-sky-900
                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600
                        transition"
                     >

@@ -105,8 +105,8 @@ export default async function MenuPage({
                   className={[
                     "px-4 py-2 text-sm transition",
                     isActive
-                      ? "bg-sky-950 text-white border-sky-950"
-                      : "bg-white text-[#111F15]  hover:border-bottom-sky-950",
+                      ? "bg-[#111F15] text-white border-[#111F15]"
+                      : "bg-white text-[#111F15]  hover:border-bottom-[#111F15]",
                   ].join(" ")}
                 >
                   {tab.name}
@@ -135,7 +135,7 @@ export default async function MenuPage({
                   />
                 ))}
                 {!cat.items?.length && (
-                  <div className="col-span-full text-sky-700 text-sm">
+                  <div className="col-span-full text-gray-500 text-sm">
                     Belum ada item pada kategori ini.
                   </div>
                 )}
@@ -144,7 +144,7 @@ export default async function MenuPage({
           ))}
 
           {visibleCategories.length === 0 && (
-            <div className="mt-10 text-sky-700">
+            <div className="mt-10 text-gray-500">
               Kategori tidak ditemukan. Coba pilih kategori lain.
             </div>
           )}
