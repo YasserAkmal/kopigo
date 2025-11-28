@@ -21,7 +21,7 @@ export default function HeroSubscription({
   if (!item) return null;
 
   const hasImage = !!item.image?.src; // ← deteksi ada gambar atau tidak
-  const bg = item.theme?.background ?? "#FAF8F6";
+  const bg = item.theme?.background ?? "#B2C0DA";
   const headingColor = item.theme?.headingColor ?? "text-[#111F15]";
   const textColor = item.theme?.textColor ?? "text-[#111F15]";
   const buttonClass =

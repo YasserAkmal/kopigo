@@ -14,14 +14,14 @@ export default function Home() {
         <HeroVideo variant="home" />
         <div className="">
           <HeroSubscription />
-          <HeroSubscription variant="GrowthStory" />
+          <HeroSubscription variant="GrowthStory"  />
           <HeroVideo variant="Commitment" />
           <HeroSubscription variant="Movement" />
         </div>
         {/* <div className="bg-[#FAF8F6] py-12 sm:py-16">
           <PromoCarousel />
         </div> */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h2 className="font-serif text-center text-2xl sm:text-3xl lg:text-4xl text-[#111F15] mb-8 sm:mb-10">
             What they say
           </h2>
