@@ -15,10 +15,10 @@ function cx(...classes: Array<string | false | null | undefined>) {
 
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/" },
-  { label: "About Us", href: "/aboutus" },
-  { label: "Our Menu", href: "/menu" },
-  { label: "Locations", href: "/storebranches" },
-  { label: "Contact Us", href: "/contactus" },
+  { label: "Visit Us", href: "/aboutus" },
+  { label: "All Outlets Location", href: "/storebranches" },
+  { label: "Gallery of Kopigo", href: "/gallery" },
+  { label: "Connect With Us", href: "/contactus" },
 ] as const;
 
 const getBranchHref = (slug: string) =>
@@ -88,7 +88,7 @@ function StoreDropdownDesktop({
           "hover:underline underline-offset-4 decoration-2",
           isActive
             ? "font-semibold underline underline-offset-4 decoration-2"
-            : "font-normal"
+            : "font-normal",
         )}
       >
         Locations
@@ -102,12 +102,11 @@ function StoreDropdownDesktop({
         role="menu"
         className={cx(
           "absolute -translate-x-3/4 mt-2 w-[720px] max-w-[90vw]",
-          "bg-[#253A5B]",
           "shadow-2xl ring-1 ring-black/5 p-4",
           "transition-all duration-150 origin-top",
           open
             ? "opacity-100 scale-100 pointer-events-auto"
-            : "opacity-0 scale-85 pointer-events-none"
+            : "opacity-0 scale-85 pointer-events-none",
         )}
         onMouseEnter={openNow}
         onMouseLeave={() => closeWithDelay()}
@@ -138,7 +137,7 @@ function StoreDropdownDesktop({
               </div>
               <div className="p-3">
                 <p className="text-sm font-semibold">{b.name}</p>
-                <p className="text-xs text-white/70">{b.address}</p>
+                <p className="text-xs text-[#354338]/70">{b.address}</p>
               </div>
             </Link>
           ))}
@@ -170,7 +169,7 @@ function StoreAccordionMobile({ onNavigate }: { onNavigate?: () => void }) {
       <div
         className={cx(
           "overflow-hidden transition-[max-height,opacity] duration-300",
-          open ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <div className="grid grid-cols-2 gap-3 px-2 pb-3">
@@ -216,8 +215,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#253A5B] text-zinc-50">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-white text-[#354338]">
+      <nav className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
@@ -225,14 +224,14 @@ export default function Navbar() {
           >
             <span className="inline-flex h-9 w-9 items-center justify-center">
               <Image
-                src="/LOGO-KOPIGO.svg"
+                src="/KPG-LOGO.png"
                 alt="KOPIGO"
                 width={36}
                 height={36}
                 priority
               />
             </span>
-            <span className="font-sans text-white text-base font-semibold tracking-tight">
+            <span className="font-playfair text-[#354338] text-base font-semibold tracking-tight">
               KOPIGO
             </span>
           </Link>
@@ -240,7 +239,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) =>
-              item.label === "Locations" ? (
+              item.label === "All Outlets Location" ? (
                 <StoreDropdownDesktop
                   key={item.href}
                   isActive={isActive(item.href)}
@@ -255,13 +254,13 @@ export default function Navbar() {
                     "hover:underline underline-offset-4 decoration-2",
                     isActive(item.href)
                       ? "font-semibold underline underline-offset-4 decoration-2"
-                      : "font-normal"
+                      : "font-normal",
                   )}
                   prefetch
                 >
                   {item.label}
                 </Link>
-              )
+              ),
             )}
           </div>
 
@@ -286,13 +285,13 @@ export default function Navbar() {
             "md:hidden origin-top overflow-hidden transition-[max-height,opacity] duration-300 rounded-b-xl",
             open
               ? "max-h-[80vh] opacity-100"
-              : "pointer-events-none max-h-0 opacity-0"
+              : "pointer-events-none max-h-0 opacity-0",
           )}
         >
           <div className="mt-2">
             <div className="flex flex-col gap-1 py-2">
               {NAV_ITEMS.map((item) =>
-                item.label === "Locations" ? (
+                item.label === "All Outlets Location" ? (
                   <StoreAccordionMobile
                     key={`m-${item.href}`}
                     onNavigate={() => setOpen(false)}
@@ -302,18 +301,18 @@ export default function Navbar() {
                     key={`m-${item.href}`}
                     href={item.href}
                     className={cx(
-                      "rounded-lg px-3 py-2 text-sm transition-colors text-white",
+                      "rounded-lg px-3 py-2 text-sm transition-colors text-[#354338]",
                       "hover:underline underline-offset-4 decoration-2",
                       isActive(item.href)
                         ? "font-semibold underline underline-offset-4 decoration-2"
-                        : "font-normal"
+                        : "font-normal",
                     )}
                     prefetch
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
                   </Link>
-                )
+                ),
               )}
             </div>
           </div>

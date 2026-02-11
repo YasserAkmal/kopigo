@@ -48,14 +48,15 @@ export default async function MenuPage({
     typeof sp.category === "string"
       ? sp.category
       : Array.isArray(sp.category)
-      ? sp.category[0]
-      : "all";
+        ? sp.category[0]
+        : "all";
 
   const selectedSlug = (selectedSlugRaw ?? "all").toLowerCase();
   const selectedName =
     selectedSlug === "all"
       ? "All"
-      : categories.find((c) => slugify(c.name) === selectedSlug)?.name ?? "All";
+      : (categories.find((c) => slugify(c.name) === selectedSlug)?.name ??
+        "All");
 
   const visibleCategories =
     selectedName === "All"
@@ -77,8 +78,8 @@ export default async function MenuPage({
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+          <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
             Menu Kopigo
           </h1>
           <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
@@ -88,7 +89,7 @@ export default async function MenuPage({
         </div>
       </section>
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Tabs kategori */}
           <div className=" flex flex-wrap gap-2">
             {allTabs.map((tab) => {
@@ -119,7 +120,7 @@ export default async function MenuPage({
           {visibleCategories.map((cat) => (
             <div key={cat.name} className="mt-8">
               {(selectedName === "All" || visibleCategories.length > 1) && (
-                <h2 className="font-serif text-lg sm:text-xl text-[#111F15] mb-4">
+                <h2 className="font-playfair text-lg sm:text-xl text-[#111F15] mb-4">
                   {cat.name}
                 </h2>
               )}

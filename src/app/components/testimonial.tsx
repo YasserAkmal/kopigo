@@ -23,10 +23,10 @@ export default function Testimonial() {
         </p>
       </div>
       <div className="mt-4">
-        <p className="font-sans font-semibold text-zinc-900 leading-tight">
+        <p className="font-playfair font-semibold text-zinc-900 leading-tight">
           John Doe
         </p>
-        <p className="font-sans text-sm text-zinc-600">@johndoe</p>
+        <p className="font-playfair text-sm text-zinc-600">@johndoe</p>
       </div>
     </section>
   );

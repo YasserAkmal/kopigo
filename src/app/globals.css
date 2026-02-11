@@ -1,14 +1,15 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=ebGaramond:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 
 :root {
   /* Warna dasar */
   --background: #ffffff;
-  --foreground: #475468;
+  --foreground: #354338;
 
   /* Map nama font dari Google Fonts ke CSS variable */
-  --font-noto-sans: "Noto Sans";
-  --font-ebGaramond: "ebGaramond";
+  --font-playfair-sc: "Playfair Display SC";
+  --font-playfair: "Playfair Display";
+  --font-playfair-regular: "Playfair";
 }
 
 /* Tailwind v4 tokens */
@@ -17,37 +18,51 @@
   --color-foreground: var(--foreground);
 
   /* Keluarga font untuk util Tailwind */
-  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-
-  --font-serif: var(--font-ebGaramond), ui-serif, Georgia, Cambria, "Times New Roman",
-    Times, serif;
-
-  /* (Opsional) mono */
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-display: var(--font-playfair);
+  --font-display-sub: var(--font-playfair-display);
+  --font-text: var(--font-playfair);
 }
 
 /* Utilitas opsional (kalau ingin class eksplisit) */
-.font-noto {
-  font-family: var(--font-sans);
+.playfair-display-sc-regular {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.font-ebGaramond {
-  font-family: var(--font-serif);
+
+.playfair-display-sc-bold {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.playfair-display-sc-black {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.playfair-display-sc-regular-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.playfair-display-sc-bold-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.playfair-display-sc-black-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 /* Base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-text);
 }
-
-/* (Opsional) Heading default pakai ebGaramond — hapus jika tidak perlu
-@layer base {
-  h1, h2, h3 {
-    font-family: var(--font-serif);
-  }
-}
-*/

@@ -59,7 +59,7 @@ export default function PromoCarousel() {
         stopOnInteraction: false,
         stopOnMouseEnter: true,
       }),
-    ]
+    ],
   );
 
   useEffect(() => {
@@ -71,8 +71,8 @@ export default function PromoCarousel() {
 
   return (
     <section className="bg-[#FFFFF]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <h2 className="font-serif text-center text-2xl sm:text-3xl text-[#111F15]">
+      <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <h2 className="font-playfair text-center text-2xl sm:text-3xl text-[#111F15]">
           Catch This Now!
         </h2>
 
@@ -95,7 +95,7 @@ export default function PromoCarousel() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <p className="font-serif text-[#111F15] tracking-tight">
+                    <p className="font-playfair text-[#111F15] tracking-tight">
                       {p.title}
                     </p>
                     {p.note && (

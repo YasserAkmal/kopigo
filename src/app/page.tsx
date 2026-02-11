@@ -1,7 +1,6 @@
 "use client";
 
 import HeroSubscription from "./components/HeroSubscription";
-import PromoCarousel from "./components/PromoCarousel";
 import Testimonial from "./components/testimonial";
 import InstagramPhoto from "./components/InstagramPhoto";
 import HeroVideo from "./components/MainHero";
@@ -14,25 +13,12 @@ export default function Home() {
         <HeroVideo variant="home" />
         <div className="">
           <HeroSubscription />
-          <HeroSubscription variant="GrowthStory"  />
-          <HeroVideo variant="Commitment" />
+          <HeroSubscription variant="GrowthStory" />
           <HeroSubscription variant="Movement" />
         </div>
-        {/* <div className="bg-[#FAF8F6] py-12 sm:py-16">
-          <PromoCarousel />
-        </div> */}
-        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <h2 className="font-serif text-center text-2xl sm:text-3xl lg:text-4xl text-[#111F15] mb-8 sm:mb-10">
-            What they say
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Testimonial />
-            <Testimonial />
-            <Testimonial />
-          </div>
-        </div>
+
         <section className="bg-[#FAF8F6] ">
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="mx-auto max-w-12xl sm:px-6 lg:px-8 py-12 sm:py-16">
             <div className="">
               <InstagramPhoto />
             </div>

@@ -4,17 +4,17 @@
     {
       "key": "philosophy",
       "title": "Our Philosophy",
-      "description": "We believe coffee should move as fast as life — without losing its soul. Every cup we serve is built on three pillars: speed, quality, and connection. We exist not just to serve coffee, but to build meaningful places — where work, ideas, and community flow together. and one day, Asia",
+      "description": "We Believe coffee Should move as fast as life Without losing it soul. Every cup we serve is built on three pillars : Speed, Quality, and - Connection. We exist not just to serve coffee, but to build meaningful places - where work, ideas, and community flow together.and one day, Asia.",
       "image": {
-        "src": "/dummy-img.jpg",
+        "src": "/phlosop.png",
         "alt": "Coffee subscription products"
       },
       "cta": { "label": "More About Us", "href": "/aboutus" },
       "theme": {
         "background": "#FAF8F6",
-        "headingColor": "text-[#111F15]",
-        "textColor": "text-[#111F15]",
-        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
+        "headingColor": "text-[#354338]",
+        "textColor": "text-[#354338]",
+        "buttonClass": "text-[#354338] border border-[#354338] hover:bg-[#354338] hover:text-white"
       },
       "layout": {
         "reverseOnDesktop": false
@@ -25,7 +25,7 @@
       "title": "Our Growth Story",
       "description": "From one humble bar in Bukittinggi to multiple outlets across Sumatra, KOPIGO continues to grow with one mission: to make great coffee an everyday culture. Next stops: Jakarta, Bali, Surabaya.",
       "image": {
-        "src": "/dummy-img.jpg",
+        "src": "/growth.png",
         "alt": "Coffee subscription products"
       },
       "cta": {
@@ -34,9 +34,9 @@
       },
       "theme": {
         "background": "#fff",
-        "headingColor": "text-[#111F15]",
-        "textColor": "text-[#111F15]",
-        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
+        "headingColor": "text-[#354338]",
+        "textColor": "text-[#354338]",
+        "buttonClass": "text-[#354338] border border-[#354338] hover:bg-[#354338] hover:text-white"
       },
       "layout": {
         "reverseOnDesktop": true
@@ -56,10 +56,10 @@
         "href": ""
       },
       "theme": {
-        "background": "#FAF8F6",
-        "headingColor": "text-[#111F15]",
-        "textColor": "text-[#111F15]",
-        "buttonClass": ""
+        "background": "#fff",
+        "headingColor": "text-[#354338]",
+        "textColor": "text-[#354338]",
+        "buttonClass": "text-[#354338] border border-[#354338] hover:bg-[#354338] hover:text-white"
       },
       "layout": {
         "reverseOnDesktop": true
@@ -80,9 +80,9 @@
       },
       "theme": {
         "background": "#fff",
-        "headingColor": "text-[#111F15]",
-        "textColor": "text-[#111F15]",
-        "buttonClass": "border border-[#111F15] hover:bg-[#FAF8F6] text-[#111F15]"
+        "headingColor": "text-[#354338]",
+        "textColor": "text-[#354338]",
+        "buttonClass": "text-[#354338] border border-[#354338] hover:bg-[#354338] hover:text-white"
       },
       "layout": {
         "reverseOnDesktop": false

@@ -29,7 +29,7 @@ export default async function StoreBranches({
   const embed = branch.gmapsQuery ? mapsEmbedSrc(branch.gmapsQuery) : null;
 
   return (
-    <main className="mx-auto max-w-7xl p-6">
+    <main className="mx-auto max-w-12xl p-6">
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-[#111F15]">{branch.name}</h1>

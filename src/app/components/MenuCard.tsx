@@ -38,7 +38,7 @@ export default function MenuCard({
       </div>
 
       <div className="p-4 sm:p-5">
-        <h3 className="font-serif text-[#111F15] text-base sm:text-lg tracking-tight">
+        <h3 className="font-playfair text-[#111F15] text-base sm:text-lg tracking-tight">
           {title}
         </h3>
         {desc && <p className="mt-1 text-sm text-zinc-700">{desc}</p>}

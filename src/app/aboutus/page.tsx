@@ -23,8 +23,8 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+          <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">
             About Kopigo
           </h1>
           <p className="mt-4 max-w-2xl text-white/90 text-base sm:text-lg">
@@ -36,10 +36,10 @@ export default function AboutPage() {
 
       {/* MISI / TAGLINE */}
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h2 className="font-serif text-2xl sm:text-3xl text-[#111F15]">
+              <h2 className="font-playfair text-2xl sm:text-3xl text-[#111F15]">
                 Our Mission
               </h2>
               <p className="mt-4 text-zinc-700 leading-relaxed">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </div>
             <div className="p-6">
               <p className="text-zinc-800">
-                <span className="font-serif text-[#111F15]">Kopigo</span>
+                <span className="font-playfair text-[#111F15]">Kopigo</span>
                 was born from the culture of hanging out: random chats that
                 spark ideas, creations born from playfulness, and laughter that
                 lightens the day. Express yourself—we’ve got the space for it.
@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div className="relative aspect-[4/3] w-full overflow-hidden ">
               <Image
@@ -76,7 +76,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h3 className="font-serif text-2xl text-[#111F15]">
+              <h3 className="font-playfair text-2xl text-[#111F15]">
                 Your Favorite Hangout Spot
               </h3>
               <p className="mt-4 text-zinc-700 leading-relaxed">
@@ -97,8 +97,8 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <h3 className="font-serif text-2xl sm:text-3xl text-[#111F15]">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <h3 className="font-playfair text-2xl sm:text-3xl text-[#111F15]">
             Our Values
           </h3>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 key={v.title}
                 className=" bg-white border border-black/5 p-6"
               >
-                <p className="font-serif text-[#111F15]">{v.title}</p>
+                <p className="font-playfair text-[#111F15]">{v.title}</p>
                 <p className="mt-2 text-zinc-700">{v.desc}</p>
               </div>
             ))}
@@ -128,10 +128,10 @@ export default function AboutPage() {
         </div>
       </section>
       <section>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h3 className="font-serif text-2xl text-[#111F15]">
+              <h3 className="font-playfair text-2xl text-[#111F15]">
                 {" "}
                 The Kopigo Team
               </h3>
@@ -163,9 +163,9 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-[#FAF8F6]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className=" p-6 sm:p-8 lg:p-10 text-center">
-            <h4 className="font-serif text-2xl text-[#111F15]">
+            <h4 className="font-playfair text-2xl text-[#111F15]">
               Ready to Hang Out at Kopigo?
             </h4>
             <p className="mt-2 text-zinc-700">

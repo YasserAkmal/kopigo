@@ -62,7 +62,7 @@ export default function ContactPage() {
       if (!ct.includes("application/json")) {
         const text = await res.text();
         throw new Error(
-          `Server responded ${res.status}. ${text.slice(0, 140)}…`
+          `Server responded ${res.status}. ${text.slice(0, 140)}…`,
         );
       }
 
@@ -84,7 +84,7 @@ export default function ContactPage() {
   const ariaLive = useMemo(() => (isLoading ? "off" : "polite"), [isLoading]);
 
   return (
-    <main className="mx-auto max-w-7xl p-6">
+    <main className="mx-auto max-w-12xl p-6">
       <div className="grid gap-10 md:grid-cols-2 items-start">
         {/* Left image (hidden on mobile) */}
         <aside className="hidden md:block">
@@ -103,7 +103,7 @@ export default function ContactPage() {
         {/* Right: form */}
         <section>
           <header className="mb-8">
-            <h1 className="text-3xl font-bold font-serif">Contact Us</h1>
+            <h1 className="text-3xl font-bold font-playfair">Contact Us</h1>
             <p className="text-sm text-gray-500">
               Have a question or partnership idea? Send us a message using the
               form below.

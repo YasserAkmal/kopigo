@@ -30,7 +30,9 @@ export default function HeroSubscription({
 
   return (
     <section style={{ background: bg }}>
-      <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${paddingClass}`}>
+      <div
+        className={`mx-auto max-w-12xl px-4 sm:px-6 lg:px-8 ${paddingClass}`}
+      >
         {hasImage ? (
           // ======= MODE DUA KOLOM (ADA GAMBAR) =======
           <div
@@ -103,7 +105,7 @@ function ContentBlock({
       )}
 
       <h1
-        className={`font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight ${headingColor}`}
+        className={`font-playfair text-3xl sm:text-4xl lg:text-5xl leading-tight ${headingColor}`}
       >
         {item.title}
       </h1>
