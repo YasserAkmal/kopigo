@@ -1,15 +1,21 @@
 // app/lib/branches.ts
 import cabang from "@/app/data/cabang.json";
-
 export type Branch = {
   slug: string;
   name: string;
-  image?: string;
+  image: string;
   address: string;
   phone: string;
   openingHours: string;
   note?: string;
   gmapsQuery?: string;
+
+  bestSellers?: string[];
+  parking?: string;
+  accessible?: boolean;
+  social?: string;
+  promo?: string;
+  photos?: string[];
 };
 
 export function getBranches(): Branch[] {
