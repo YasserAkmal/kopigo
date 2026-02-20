@@ -11,12 +11,15 @@ export default function Home() {
     <main className="relative flex min-h-screen flex-col">
       <section>
         <HeroVideo variant="home" />
-        <div className="">
+        <div className="" data-aos="fade-up">
           <HeroSubscription />
+        </div>
+        <div className="" data-aos="fade-up">
           <HeroSubscription variant="GrowthStory" />
+        </div>
+        <div className="" data-aos="fade-up">
           <HeroSubscription variant="Movement" />
         </div>
-
         <section className="bg-[#FAF8F6] ">
           <div className="mx-auto max-w-12xl sm:px-6 lg:px-8 py-12 sm:py-16">
             <div className="">

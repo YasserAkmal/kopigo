@@ -1,34 +1,80 @@
 {
-  "updatedAt": "2025-10-10",
+  "updatedAt": "2026-02-20",
   "items": [
     {
       "slug": "bukit",
       "name": "Kopigo Bukittinggi",
-      "image": "/dummy-img.jpg",
-      "address": "Jl. Teuku Umar No.16, Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi, Sumatera Barat 26136",
+      "image": "/bg.jpg",
+      "address": "Jl. Teuku Umar No.16, Benteng Pasar Atas, Guguk Panjang District, Bukittinggi City, West Sumatra 26136",
       "phone": "+62 812-0000-0001",
       "openingHours": "08:00–22:00",
-      "note": "Tempat duduk outdoor",
-      "gmapsQuery": "M9W8+PW Benteng Pasar Atas, Bukittinggi City, West Sumatra"
+      "note": "Outdoor seating • Cozy rooftop area • Instagrammable spot",
+      "gmapsQuery": "M9W8+PW Benteng Pasar Atas, Bukittinggi City, West Sumatra",
+      "bestSellers": [
+        "V60 Black Coffee",
+        "Iced Kopigo Signature",
+        "Signature Chocolate",
+        "Bika Ambon + Milk Coffee"
+      ],
+      "parking": "Spacious motorcycle parking in front (free), limited car parking on the roadside or nearby public parking",
+      "accessible": true,
+      "social": "https://www.instagram.com/therealkopigo",
+      "promo": "Buy 2 Get 1 Free Iced Drinks every Wednesday (Bukittinggi branch only)",
+      "photos": [
+        "/under.png",
+        "/under.png",
+        "/under.png"
+      ]
     },
     {
       "slug": "pondok",
       "name": "Kopigo Pondok",
-      "image": "/dummy-img.jpg",
-      "address": "Jl. Kelenteng No.2, Kp. Pd., Kec. Padang Bar., Kota Padang, Sumatera Barat 25212",
+      "image": "/bg.jpg",
+      "address": "Jl. Kelenteng No.2, Kampung Pondok, Padang Barat District, Padang City, West Sumatra 25212",
       "phone": "+62 812-0000-0002",
       "openingHours": "08:00–22:00",
-      "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra"
+      "note": "Semi-vintage design • Comfortable for working or long hangouts • Indoor & semi-outdoor areas available",
+      "gmapsQuery": "29Q6+3W Kampung Pondok, Padang City, West Sumatra",
+      "bestSellers": [
+        "Hot Cappuccino",
+        "Iced Vanilla Latte",
+        "Choco Oreo",
+        "Espresso + Biscotti"
+      ],
+      "parking": "Motorcycle & car parking available on-site (free, approx. 10–15 vehicles)",
+      "accessible": true,
+      "social": "https://www.instagram.com/therealkopigo",
+      "promo": "15% discount for students (show student ID) every Monday–Friday",
+      "photos": [
+        "/under.png",
+        "/under.png",
+        "/under.png"
+      ]
     },
     {
       "slug": "sawahan",
       "name": "Kopigo Sawahan",
-      "image": "/dummy-img.jpg",
-      "address": "Jl. Sawahan Dalam No.41, Sawahan, Kec. Padang Tim., Kota Padang, Sumatera Barat 25171",
+      "image": "/bg.jpg",
+      "address": "Jl. Sawahan Dalam No.41, Sawahan, Padang Timur District, Padang City, West Sumatra 25171",
       "phone": "+62 812-0000-0003",
       "openingHours": "09:00–23:00",
-      "note": "Live music Jumat",
-      "gmapsQuery": "3939+G7 Sawahan, Padang City, West Sumatra"
+      "note": "Live music on Friday nights • Aesthetic photobox • Perfect for pre-wedding/friends photos",
+      "gmapsQuery": "3939+G7 Sawahan, Padang City, West Sumatra",
+      "bestSellers": [
+        "Iced Kopigo Signature",
+        "Signature Chocolate",
+        "V60 Black Coffee",
+        "Matcha Latte"
+      ],
+      "parking": "Spacious motorcycle parking, car parking on the roadside or nearby public parking (free for motorcycles)",
+      "accessible": false,
+      "social": "https://www.instagram.com/therealkopigo",
+      "promo": "Free large size upgrade for purchases above IDR 50,000 (weekend only)",
+      "photos": [
+        "/under.png",
+        "/under.png",
+        "/under.png"
+      ]
     }
   ]
 }

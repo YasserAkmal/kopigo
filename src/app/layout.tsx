@@ -3,6 +3,21 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "./components/Navbar";
+import { Playfair_Display, Playfair_Display_SC } from "next/font/google";
+import AOSProvider from "./components/AOSProvider";
+
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
+const playfairSC = Playfair_Display_SC({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-playfair-sc",
+});
+
 
 export const metadata: Metadata = {
   title: "Kopigo",
@@ -27,8 +42,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`h-full  font-playfair`}>
+    <html lang="en" className={`h-full ${playfair.variable} ${playfairSC.variable}`}>
       <body className="min-h-screen bg-white text-gray-900 font-playfair">
+        <AOSProvider />
         <Navbar />
         {children}
         <footer

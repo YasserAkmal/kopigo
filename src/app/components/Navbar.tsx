@@ -24,7 +24,6 @@ const NAV_ITEMS = [
 const getBranchHref = (slug: string) =>
   `/storebranches?branch=${encodeURIComponent(slug)}`;
 
-/* ===== Desktop STORE dropdown (di dalam Navbar saja) ===== */
 function StoreDropdownDesktop({
   isActive,
   onNavigate,
@@ -91,7 +90,7 @@ function StoreDropdownDesktop({
             : "font-normal",
         )}
       >
-        Locations
+        All Outlets Location
         <ChevronDown
           className={cx("h-4 w-4 transition-transform", open && "rotate-180")}
         />
@@ -101,7 +100,7 @@ function StoreDropdownDesktop({
       <div
         role="menu"
         className={cx(
-          "absolute -translate-x-3/4 mt-2 w-[720px] max-w-[90vw]",
+          "absolute -translate-x-3/4 mt-2 w-[720px] max-w-[90vw] bg-white",
           "shadow-2xl ring-1 ring-black/5 p-4",
           "transition-all duration-150 origin-top",
           open
@@ -160,7 +159,7 @@ function StoreAccordionMobile({ onNavigate }: { onNavigate?: () => void }) {
         className="w-full rounded-lg px-3 py-2 text-left text-sm inline-flex items-center justify-between hover:underline underline-offset-4"
         aria-expanded={open}
       >
-        <span>Locations</span>
+        <span>All Outlets Location</span>
         <ChevronDown
           className={cx("h-4 w-4 transition-transform", open && "rotate-180")}
         />
@@ -237,7 +236,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 bg-white">
             {NAV_ITEMS.map((item) =>
               item.label === "All Outlets Location" ? (
                 <StoreDropdownDesktop

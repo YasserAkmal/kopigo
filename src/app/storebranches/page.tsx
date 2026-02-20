@@ -7,7 +7,6 @@ type SP = Record<string, string | string[] | undefined>;
 export default async function StoreBranches({
   searchParams,
 }: {
-  // ⬅️ hanya Promise, bukan union
   searchParams: Promise<SP>;
 }) {
   const sp = (await searchParams) ?? {};
@@ -17,9 +16,9 @@ export default async function StoreBranches({
   if (!branch) {
     return (
       <main className="mx-auto max-w-6xl p-6">
-        <h1 className="text-2xl font-bold">Cabang tidak ditemukan</h1>
+        <h1 className="text-2xl font-bold">Branch not found</h1>
         <p className="text-sm text-gray-500 mt-2">
-          Pastikan parameter <code>?branch=</code> benar.
+          Make sure the <code>?branch=</code> parameter is correct.
         </p>
       </main>
     );
@@ -30,23 +29,107 @@ export default async function StoreBranches({
 
   return (
     <main className="mx-auto max-w-12xl p-6">
-      <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-[#111F15]">{branch.name}</h1>
-          <p className="text-sm text-gray-500">
-            {branch.address} • {branch.openingHours} • {branch.phone}
-          </p>
-          {branch.note && (
-            <p className="text-xs text-gray-400 mt-1">{branch.note}</p>
-          )}
+      <header className="mb-6 flex flex-col gap-3">
+        <div
+          className="relative overflow-hidden px-5 py-10 text-white"
+          style={{
+            backgroundImage: `url(${branch.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+
+          {/* Content */}
+          <div className="relative z-10">
+            <h1 className="text-3xl font-bold">
+              {branch.name}
+            </h1>
+            {branch.note && (
+              <p className="text-s text-gray-300 mt-2">
+                {branch.note}
+              </p>
+            )}
+            <p className="text-xs text-gray-200 mt-2">
+              {branch.address} • {branch.openingHours} • {branch.phone}
+            </p>
+          </div>
         </div>
+
+
       </header>
 
+      {/* BEST SELLERS */}
+      {branch.bestSellers && branch.bestSellers.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-xl font-bold mb-4">Best Sellers</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {branch.bestSellers.map((item: string, i: number) => (
+              <li
+                key={i}
+                className="bg-gray-50 px-4 py-2 rounded-md text-sm"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* PARKING & ACCESS */}
+      <section className="mt-10">
+        <h2 className="text-xl font-bold mb-4">Parking & Accessibility</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="font-medium">Parking Info</p>
+            <p className="text-sm text-gray-600">{branch.parking}</p>
+          </div>
+
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="font-medium">Wheelchair Access</p>
+            <p className="text-sm text-gray-600">
+              {branch.accessible ? "Available" : "Not Available"}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PROMO */}
+      {branch.promo && (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold mb-2">Current Promotion</h2>
+          <div className="bg-green-50 border border-green-200 p-4 rounded-lg text-sm text-green-800">
+            {branch.promo}
+          </div>
+        </section>
+      )}
+
+      {/* PHOTOS */}
+      {branch.photos && branch.photos.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold mb-4">Gallery</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {branch.photos.map((photo: string, i: number) => (
+              <div key={i} className="relative w-full h-64">
+                <Image
+                  src={photo}
+                  alt={`${branch.name} photo ${i + 1}`}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* MAP */}
       {embed && (
-        <section className="mb-8">
-          <div className="aspect-video w-full h-screen overflow-hidden">
+        <section className="mt-10 mb-8 flex justify-center">
+          <div className="aspect-video w-full max-w-7xl">
             <iframe
-              title={`Peta ${branch.name}`}
+              title={`Map ${branch.name}`}
               src={embed}
               referrerPolicy="no-referrer-when-downgrade"
               loading="lazy"
