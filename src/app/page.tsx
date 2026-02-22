@@ -5,11 +5,13 @@ import Testimonial from "./components/testimonial";
 import InstagramPhoto from "./components/InstagramPhoto";
 import HeroVideo from "./components/MainHero";
 import GradualBlur from "./components/GradualBlur";
+import Maintenance from "./components/Maintanance";
 
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col">
-      <section>
+      <Maintenance />
+      {/* <section>
         <HeroVideo variant="home" />
         <div className="" data-aos="fade-up">
           <HeroSubscription />
@@ -37,7 +39,7 @@ export default function Home() {
           exponential={true}
           opacity={1}
         />
-      </section>
+      </section> */}
     </main>
   );
 }
